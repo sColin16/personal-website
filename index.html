@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!-- Viewport meta tag to make the website responsive-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<html>
+    <head>
+        <style>
+            .section-container {
+                margin: auto;
+            }
+
+            .section {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .left-item {
+                flex-basis: 100%;
+                text-align: center;
+                /* Unsure if I need this. It's part of the template, but doesn't 
+                   seem to change anything*/
+                /*max-width: 33.333%;*/
+            }
+
+            .right-item {
+                flex-basis: 100%;
+                /*max-width: 66.667%;*/
+            }
+
+            @media (min-width: 600px) {
+                .left-item {
+                    flex-basis: 33%;
+                }
+
+                .right-item {
+                    flex-basis: 67%;
+                }
+            }
+
+            #name {
+                text-align: center;
+            }
+
+            #picture {
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                object-position: -90% 0%;
+                border-radius:50%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class='section-container'>
+            <div class='section'>
+                <div class='left-item'>
+                    <img id='picture' src='portfolio_pic.jpeg'>
+                    <h2 id='name'>Colin Siles</h2>
+                </div>
+
+                <div class='right-item'>
+                    <h1>Hi there!</h1>
+                    <p>My name is Colin, and I'm a student Lorem ipsum dolor
+                    sit amet, consectetur adipiscing elit. Sed neque elit,
+                    tristique placerat feugiat ac, facilisis vitae arcu. Proin
+                    eget egestas augue. Praesent ut sem nec arcu pellentesque
+                    aliquet. Duis dapibus diam vel metus tempus vulputate.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed neque elit, tristique placerat feugiat ac, facilisis
+                    vitae arcu. Proin eget egestas augue. Praesent ut sem nec
+                    arcu pellentesque aliquet. Duis dapibus diam vel metus
+                    tempus vulputate.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
