@@ -6,74 +6,146 @@
 <html>
     <head>
         <style>
-            .section-container {
+            /* The box-sizing property lets us add padding without flexbox blowing up in my face */
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+            }
+
+            /* This is used to restrict the size of the content within this
+            container. The flex box and items inside are constrained by this
+            size, preventing them from changing too much as the website resizes,
+            auto margin centers the div.  Padding adds some space around the
+            whoe thing. I change the max size with media queries later*/
+            .outer-container {
+                max-width: 100%;
+                padding: 100px 30px;
                 margin: auto;
             }
 
-            .section {
+            /* The negative margin is used to allow padding on the flex items */
+            .inner-container {
                 display: flex;
-                flex-wrap: wrap;
+                flex-wrap: wrap; 
                 justify-content: center;
+                margin-left: -15px;
+                margin-right: -15px;
             }
 
-            .left-item {
+            /* Flex basis controls the relative size of the blocks */
+            .left {
                 flex-basis: 100%;
-                text-align: center;
-                /* Unsure if I need this. It's part of the template, but doesn't 
-                   seem to change anything*/
-                /*max-width: 33.333%;*/
+                max-width: 100%;
+                padding-left: 15px;
+                padding-right: 15px;
             }
 
-            .right-item {
+            .right {
                 flex-basis: 100%;
-                /*max-width: 66.667%;*/
+                max-width: 100%;
+                padding-left: 15px;
+                padding-right: 15px;
             }
 
-            @media (min-width: 600px) {
-                .left-item {
+            /* Use the bootstrap breakpoints for device size (since they probably know what they're doing)*/
+
+            /*Extra small devices (below 576px) are the default definitions*/
+            /* TODO: adjust some of these to let them be somewhat larger 
+
+            /* Small devices (landscape phones, 576px and up)*/
+            @media (min-width: 576px) {
+                .outer-container {
+                    max-width: 576px;
+                }
+            }
+
+            /* Medium devices (tablets, 768px and up)*/
+            @media (min-width: 768px) {
+                .outer-container {
+                    max-width: 768px;
+                }
+            }
+
+            /* Large devices (desktops, 992px and up) */
+            @media (min-width: 992px) {
+                .outer-container {
+                    max-width: 992px;
+                }
+
+                .left {
                     flex-basis: 33%;
+                    max-width: 33%;
                 }
 
-                .right-item {
+                .right {
                     flex-basis: 67%;
+                    max-width: 67%;
                 }
             }
 
-            #name {
+            /* Extra large devices (large desktops, 1200px and up) */
+            @media (min-width: 1200px) {
+                .outer-container {
+                    max-width: 1200px;
+                }
+            }
+
+            #picture-container {
                 text-align: center;
             }
 
             #picture {
-                width: 300px;
-                height: 300px;
+                max-width: 100%;
+                width: 275px;
+                height: 275px;
                 object-fit: cover;
                 object-position: -90% 0%;
                 border-radius:50%;
             }
-
         </style>
     </head>
     <body>
-        <div class='section-container'>
-            <div class='section'>
-                <div class='left-item'>
-                    <img id='picture' src='portfolio_pic.jpeg'>
-                    <h2 id='name'>Colin Siles</h2>
+        <div class='outer-container'>
+            <div class='inner-container'>
+                <div class='left'>
+                    <div id='picture-container'>
+                        <img id='picture' src='portfolio_pic.jpeg'>
+                        <h1 id='name'>Colin Siles</h1>
+                    </div>
                 </div>
 
-                <div class='right-item'>
+                <div class='right'>
                     <h1>Hi there!</h1>
-                    <p>My name is Colin, and I'm a student Lorem ipsum dolor
-                    sit amet, consectetur adipiscing elit. Sed neque elit,
-                    tristique placerat feugiat ac, facilisis vitae arcu. Proin
-                    eget egestas augue. Praesent ut sem nec arcu pellentesque
-                    aliquet. Duis dapibus diam vel metus tempus vulputate.</p>
+                    <p>My name is Colin, and I'm a student at Colorado School of
+                    Mines pursuing a B.S. in Computer Science, with a focus in
+                    Data Science. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Sed neque elit, tristique placerat feugiat
+                    ac, facilisis vitae arcu. Proin eget egestas augue. Praesent
+                    ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel
+                    metus tempus vulputate.</p>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Sed neque elit, tristique placerat feugiat ac, facilisis
                     vitae arcu. Proin eget egestas augue. Praesent ut sem nec
                     arcu pellentesque aliquet. Duis dapibus diam vel metus
                     tempus vulputate.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class='outer-container'>
+            <div class='inner-container'>
+                <div class='left'>
+                    <h1>Portfolio</h1>
+                </div>
+                <div class='right'>
+                    <h2>First project</h2>
+                    <p>A short decsription goes here</p>
+                    <h2>Another project</h2>
+                    <p>Another short description goes here</p>
                 </div>
             </div>
         </div>
