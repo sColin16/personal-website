@@ -76,13 +76,13 @@
                 }
 
                 .left {
-                    flex-basis: 33%;
                     max-width: 33%;
+                    flex-grow: 1;
                 }
 
                 .right {
-                    flex-basis: 67%;
                     max-width: 67%;
+                    flex-grow: 2;
                 }
             }
 
@@ -93,14 +93,31 @@
                 }
             }
 
+            .project-container {
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+
+            .project-thumbnail {
+                max-width: 200px;
+                max-height: 200px;
+                flex-grow: 1;
+            }
+
+            .project-decsription {
+                display: inline-block;
+                flex-grow: 3;
+            }
+
             #picture-container {
                 text-align: center;
             }
 
             #picture {
                 max-width: 100%;
-                width: 275px;
-                height: 275px;
+                width: 280px;
+                height: 280px;
                 object-fit: cover;
                 object-position: -90% 0%;
                 border-radius:50%;
@@ -142,9 +159,40 @@
                     <h1>Portfolio</h1>
                 </div>
                 <div class='right'>
-                    <h2>First project</h2>
+                    <div class='project-container'>
+                        <img class='project-thumbnail' src='https://icon-library.com/images/gearbox-icon/gearbox-icon-3.jpg'>
+                        <div class='project-description'>
+                            <h2>Gearbox</h2>
+                            <p>A Javascript framework to simulate reinforcement learning
+                            enviornments. Boasts more complex features that existing
+                            libraries, such as the ability to handle multiple
+                            agents.</p>
+                        </div>
+                    </div>
+                    <div class='project-container'>
+                        <img class='project-thumbnail' src='visplay-icon.svg'>
+                        <div class='project-description'>
+                            <h2>Visplay</h2>
+                            <p>Visplay is an open-source project developed by
+                            the Colorado School of Mines ACM Chapter. It is a
+                            digital signage solution that makes improvement on
+                            the existing software controlling digital displays
+                            around Mine's campus</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='outer-container'>
+            <div class='inner-container'>
+                <div class='left'>
+                    <h1>Posts</h1>
+                </div>
+                <div class='right'>
+                    <h2>Post 1</h2>
                     <p>A short decsription goes here</p>
-                    <h2>Another project</h2>
+                    <h2>Post 2</h2>
                     <p>Another short description goes here</p>
                 </div>
             </div>
