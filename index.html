@@ -3,6 +3,9 @@
 <!-- Viewport meta tag to make the website responsive-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Font awesome for the 3-bar icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <html>
     <head>
         <style>
@@ -14,6 +17,42 @@
             body {
                 margin: 0;
             }
+
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color:slategray;
+            }
+
+            nav ul {
+                list-style: none;
+                margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            nav ul li:not(#menu):not(#main-nav-partition) {
+                padding-right: 40px;
+                display: none;
+            }
+
+            nav.open ul li:not(#menu):not(#main-nav-partition) {
+                display: block;
+                width: 100%;
+            }
+
+            #main-nav-partition {
+                display: block;
+                padding-right: 40px;
+            }
+
+            #menu {
+                display: block;
+                padding-right: 40px;
+            }
+
 
             /* This is used to restrict the size of the content within this
             container. The flex box and items inside are constrained by this
@@ -66,6 +105,17 @@
             @media (min-width: 768px) {
                 .outer-container {
                     max-width: 768px;
+                }
+
+                /* Show all menu items when the screen is large enough*/
+                nav ul li {
+                    display: block !important;
+                    width: auto !important;
+                }
+
+                /* Hide the little menu icon*/
+                #menu {
+                    display: none !important;
                 }
             }
 
@@ -124,7 +174,27 @@
             }
         </style>
     </head>
+
     <body>
+        <nav>
+            <ul>
+                <li id='menu' onclick="toggleNavbar()">
+                    <h2><i class='fa fa-bars'></i></h2>
+                </li>
+                <li id='main-nav-partition'>
+                    <h1>Colin Siles</h1>
+                </li>
+                <li>
+                    <h2>About me</h2>
+                </li>
+                <li>
+                    <h2>Portfolio</h2>
+                </li>
+                <li>
+                    <h2>Posts</h2>
+                </li>
+            </ul>
+        </nav>
         <div class='outer-container'>
             <div class='inner-container'>
                 <div class='left'>
@@ -198,4 +268,16 @@
             </div>
         </div>
     </body>
+    <script>
+        function toggleNavbar() {
+            const navBar = document.querySelector('nav');
+            console.log(navBar.classList)
+            if (navBar.classList.contains('open')) {
+                navBar.classList.remove('open');
+
+            } else {
+                navBar.classList.add('open');
+            }
+        }
+    </script>
 </html>
