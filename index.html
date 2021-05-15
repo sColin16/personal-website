@@ -19,14 +19,15 @@
 
             body {
                 margin: 0;
+                background-color: #121212;
+                color: white;
             }
 
             nav {
                 position: fixed;
                 top: 0;
                 width: 100%;
-                background-color:slategray;
-                padding: 0 20px;
+                background-color: #2A2A2A;
             }
 
             nav ul {
@@ -45,21 +46,53 @@
                 max-height: 163px;
             }
 
+            nav ul li {
+                padding: 10px 20px;
+            }
+
+            nav ul li h2 {
+                margin: 0;
+                /* padding: 15px 0; */
+            }
+            
+            nav ul li:hover {
+                background-color: #424242;
+                cursor: pointer;
+            }
+            
+            nav ul li.active {
+                color: #0BB5FF;
+            }
+
             #main-nav-partition {
                 width: 100%;
                 display: inline-block;
-
             }
 
             #main-nav-partition h1 {
                 display: inline-block;
+                padding: 0 20px;
             }
 
             #nav-hamburger {
                 display: block;
                 float:right;
-                padding: 20px 0;
+                padding: 20px;
             }
+
+            .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before{
+                height: 4px;
+                border-radius: 1px;
+                background-color: white !important;
+            }
+
+            /* .hamburger-inner::after {
+                top: -24px !important;
+            }
+
+            .hamburger-inner::before {
+                top: -12px !important;
+            } */
 
             /* This is used to restrict the size of the content within this
             container. The flex box and items inside are constrained by this
@@ -122,7 +155,7 @@
                 }
 
                 nav ul li {
-                    padding-left: 40px;
+                    padding: 20px 20px;
                 }
 
                 /* Hide the little menu icon*/
@@ -132,6 +165,7 @@
 
                 #main-nav-partition {
                     width: auto;
+                    padding-right: 20px;
                 }
             }
 
@@ -182,8 +216,8 @@
 
             #picture {
                 max-width: 100%;
-                width: 280px;
-                height: 280px;
+                /* max-width: 280px; */
+                max-height: 280px;
                 object-fit: cover;
                 object-position: -90% 0%;
                 border-radius:50%;
@@ -207,13 +241,13 @@
                 </button>
             </div>
             <ul id='nav-partitions'>
-                <li><h2>About Me</h2></li>
-                <li><h2>Projects</h2></li>
-                <li><h2>Posts</h2></li>
+                <li id='about-nav'><h2>About Me</h2></li>
+                <li id='project-nav'><h2>Projects</h2></li>
+                <li id='post-nav'><h2>Posts</h2></li>
             </ul>
             
         </nav>
-        <div class='outer-container'>
+        <div id='about-section' class='outer-container'>
             <div class='inner-container'>
                 <div class='left'>
                     <div id='picture-container'>
@@ -241,7 +275,7 @@
             </div>
         </div>
 
-        <div class='outer-container'>
+        <div id='project-section' class='outer-container'>
             <div class='inner-container'>
                 <div class='left'>
                     <h1>Portfolio</h1>
@@ -272,7 +306,7 @@
             </div>
         </div>
 
-        <div class='outer-container'>
+        <div id='post-section' class='outer-container'>
             <div class='inner-container'>
                 <div class='left'>
                     <h1>Posts</h1>
@@ -303,6 +337,39 @@
                 navBar.classList.add('open');
                 hamburger.classList.add('is-active');
             }
+        }
+
+        function updateActive() {
+            const about = document.getElementById('about-section');
+            const projects = document.getElementById('project-section');
+            const posts = document.getElementById('post-section');
+
+            const aboutNav = document.getElementById('about-nav');
+            const projectNav = document.getElementById('project-nav');
+            const postNav = document.getElementById('post-nav');
+
+            console.log(about.getBoundingClientRect().bottom);
+            if (about.getBoundingClientRect().bottom > 100) {
+                aboutNav.classList.add('active');
+                projectNav.classList.remove('active');
+                postNav.classList.remove('active');
+
+            } else if (projects.getBoundingClientRect().bottom > 300) {
+                aboutNav.classList.remove('active');
+                projectNav.classList.add('active');
+                postNav.classList.remove('active');
+
+            } else {
+                aboutNav.classList.remove('active');
+                projectNav.classList.remove('active');
+                postNav.classList.add('active');
+            }
+        }
+
+        window.onload = function() {
+            document.addEventListener('scroll', updateActive);
+
+            updateActive();
         }
     </script>
 </html>
