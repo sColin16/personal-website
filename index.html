@@ -21,38 +21,41 @@
             nav {
                 position: fixed;
                 top: 0;
-                left: 0;
                 width: 100%;
                 background-color:slategray;
+                padding: 0 20px;
             }
 
             nav ul {
+                position: relative;
                 list-style: none;
                 margin: 0;
-                display: flex;
-                flex-wrap: wrap;
+                max-width: 100%;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: all 500ms;
             }
 
-            nav ul li:not(#menu):not(#main-nav-partition) {
-                padding-right: 40px;
-                display: none;
-            }
-
-            nav.open ul li:not(#menu):not(#main-nav-partition) {
-                display: block;
-                width: 100%;
+            nav.open ul {
+                /* This is computed manually, seems to be the best way to do it */
+                max-height: 163px;
             }
 
             #main-nav-partition {
-                display: block;
-                padding-right: 40px;
+                width: 100%;
+                display: inline-block;
+
             }
 
-            #menu {
-                display: block;
-                padding-right: 40px;
+            #main-nav-partition h1 {
+                display: inline-block;
             }
 
+            #nav-hamburger {
+                display: block;
+                float:right;
+            }
 
             /* This is used to restrict the size of the content within this
             container. The flex box and items inside are constrained by this
@@ -108,14 +111,23 @@
                 }
 
                 /* Show all menu items when the screen is large enough*/
-                nav ul li {
-                    display: block !important;
+                nav ul {
+                    display: inline-flex !important;
                     width: auto !important;
+                    max-height: none;
+                }
+
+                nav ul li {
+                    padding-left: 40px;
                 }
 
                 /* Hide the little menu icon*/
-                #menu {
+                #nav-hamburger {
                     display: none !important;
+                }
+
+                #main-nav-partition {
+                    width: auto;
                 }
             }
 
@@ -182,23 +194,18 @@
 
     <body>
         <nav>
-            <ul>
-                <li id='menu' onclick="toggleNavbar()">
-                    <h2><i class='fa fa-bars'></i></h2>
-                </li>
-                <li id='main-nav-partition'>
-                    <h1>Colin Siles</h1>
-                </li>
-                <li>
-                    <h2>About me</h2>
-                </li>
-                <li>
-                    <h2>Portfolio</h2>
-                </li>
-                <li>
-                    <h2>Posts</h2>
-                </li>
+            <div id='main-nav-partition'>
+                <h1>Colin Siles</h1>
+                <div id='nav-hamburger' onclick="toggleNavbar()">
+                    <h2 ><i class='fa fa-bars'></i></h2>
+                </div>
+            </div>
+            <ul id='nav-partitions'>
+                <li><h2>About Me</h2></li>
+                <li><h2>Projects</h2></li>
+                <li><h2>Posts</h2></li>
             </ul>
+            
         </nav>
         <div class='outer-container'>
             <div class='inner-container'>
