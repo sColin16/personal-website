@@ -6,6 +6,9 @@
 <!-- Font awesome for the 3-bar icon -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<!--Fancy hamburger animations-->
+<link href="hamburgers.min.css" rel="stylesheet">
+
 <html>
     <head>
         <style>
@@ -55,6 +58,7 @@
             #nav-hamburger {
                 display: block;
                 float:right;
+                padding: 20px 0;
             }
 
             /* This is used to restrict the size of the content within this
@@ -196,9 +200,11 @@
         <nav>
             <div id='main-nav-partition'>
                 <h1>Colin Siles</h1>
-                <div id='nav-hamburger' onclick="toggleNavbar()">
-                    <h2 ><i class='fa fa-bars'></i></h2>
-                </div>
+                <button class='hamburger hamburger--collapse' id='nav-hamburger' onclick="toggleNavbar()" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                      </span>
+                </button>
             </div>
             <ul id='nav-partitions'>
                 <li><h2>About Me</h2></li>
@@ -287,12 +293,15 @@
     <script>
         function toggleNavbar() {
             const navBar = document.querySelector('nav');
-            console.log(navBar.classList)
+            const hamburger = document.getElementById('nav-hamburger');
+
             if (navBar.classList.contains('open')) {
                 navBar.classList.remove('open');
+                hamburger.classList.remove('is-active');
 
             } else {
                 navBar.classList.add('open');
+                hamburger.classList.add('is-active');
             }
         }
     </script>
