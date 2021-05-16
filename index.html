@@ -551,33 +551,32 @@
             let maxHeight = 0;
             let maxWidth = 0;
 
+            // Remove any previous width and height constraints
             document.getElementById('title-scroller').style.width = 'auto';
             document.getElementById('title-scroller').style.height = 'auto';
 
+            // Iterate over every element to determine it's width and height
             for (let idx = 0; idx < titleElements.length; idx++) {
-                const prevDisplay = titleElements[idx].style.display;
-
-                titleElements[idx].style.display='block';
-
-                let activeIdx;
+                // Hide all elements, except the target
                 for (let j = 0; j < titleElements.length; j++) {
-                    if (titleElements[j].classList.contains('active')) {
-                        activeIdx = j;
-                        titleElements[j].classList.remove('active');
+                    if (j !== idx) {
+                        titleElements[j].style.display = 'none';
+                    } else {
+                        titleElements[j].style.display = 'block'
                     }
                 }
 
+                // Determine the resulting height of the element
                 let height = Number(getComputedStyle(titleElements[idx]).height.slice(0, -2));
                 let width = Number(getComputedStyle(titleElements[idx]).width.slice(0, -2));
 
                 maxHeight = Math.max(height, maxHeight);
                 maxWidth = Math.max(width, maxWidth);
 
-                if (activeIdx) {
-                    titleElements[activeIdx].classList.add('active')
+                // Clear all the display styles
+                for (let j = 0; j < titleElements.length; j++) {
+                    titleElements[j].style.display = '';
                 }
-
-                titleElements[idx].style.display = prevDisplay;
             }
 
             document.getElementById('title-scroller').style.width = maxWidth + 'px';
