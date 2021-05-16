@@ -43,6 +43,7 @@
                 top: 0;
                 width: 100%;
                 background-color: #2A2A2A;
+                z-index: 99;
             }
 
             nav ul {
@@ -106,14 +107,6 @@
                 border-radius: 1px;
                 background-color: white !important;
             }
-
-            /* .hamburger-inner::after {
-                top: -24px !important;
-            }
-
-            .hamburger-inner::before {
-                top: -12px !important;
-            } */
 
             /* This is used to restrict the size of the content within this
             container. The flex box and items inside are constrained by this
@@ -319,6 +312,49 @@
                 padding: 5px;
             }
 
+            #headline {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            #header-prefix {
+                margin-right: 10px;
+            }
+
+            #title-scroller {
+                display: flex;
+                align-items: center;
+            }
+
+            .title {
+                color: #0BB5FF;
+                display: none; /* Hide by default, make visible with active class */
+            }
+
+            .title.active {
+                display: block;
+                animation: cycleText 2500ms linear infinite 0s;
+            }
+
+            @keyframes cycleText {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-15px);
+                }
+                20% {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+                80% {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translateY(15px);
+                }
+            }
+
             footer {
                 text-align: center;
                 margin: 20px 0;
@@ -381,7 +417,15 @@
                 </div>
 
                 <div class='right'>
-                    <h1>Hi there! I'm Colin Siles</h1>
+                    <h1 id='headline'>
+                        <span id='header-prefix'>Hi there! I'm</span>
+                        <span id='title-scroller'>
+                            <span class='title'>Colin Siles</span>
+                            <span class='title'>a Software Engineer</span>
+                            <span class='title'>a Data Scientist</span>
+                        </span>
+                    </h1>
+
                     <p>My name is Colin, and I'm a student at Colorado School of
                     Mines pursuing a B.S. in Computer Science, with a focus in
                     Data Science. Lorem ipsum dolor sit amet, consectetur
@@ -472,7 +516,6 @@
             const projectNav = document.getElementById('project-nav');
             const postNav = document.getElementById('post-nav');
 
-            console.log(about.getBoundingClientRect().bottom);
             if (about.getBoundingClientRect().bottom > 100) {
                 aboutNav.classList.add('active');
                 projectNav.classList.remove('active');
@@ -490,10 +533,65 @@
             }
         }
 
+        function makeTitleActive(titleElements, idx) {
+            titleElements[idx].classList.add('active')
+            const animationDuration = Number(getComputedStyle(titleElements[idx])['animation-duration'].slice(0, -1)) * 1000;
+            //const animation
+            // console.log(animationDuration);
+
+            setTimeout(() => makeTitleActive(titleElements, (idx + 1) % (titleElements.length)), animationDuration);
+            setTimeout(() => titleElements[idx].classList.remove('active'), animationDuration);
+        }
+
+        async function setTitleSize(titleElements) {
+            /* Dynamically determine max size of headline to prevent shifting elements */
+            let maxHeight = 0;
+            let maxWidth = 0;
+
+            document.getElementById('title-scroller').style.width = 'auto';
+            document.getElementById('title-scroller').style.height = 'auto';
+
+            for (let idx = 0; idx < titleElements.length; idx++) {
+                const prevDisplay = titleElements[idx].style.display;
+
+                titleElements[idx].style.display='block';
+
+                let activeIdx;
+                for (let j = 0; j < titleElements.length; j++) {
+                    if (titleElements[j].classList.contains('active')) {
+                        activeIdx = j;
+                        titleElements[j].classList.remove('active');
+                    }
+                }
+
+                let height = Number(getComputedStyle(titleElements[idx]).height.slice(0, -2));
+                let width = Number(getComputedStyle(titleElements[idx]).width.slice(0, -2));
+
+                maxHeight = Math.max(height, maxHeight);
+                maxWidth = Math.max(width, maxWidth);
+
+                if (activeIdx) {
+                    titleElements[activeIdx].classList.add('active')
+                }
+
+                titleElements[idx].style.display = prevDisplay;
+            }
+
+            document.getElementById('title-scroller').style.width = maxWidth + 'px';
+            document.getElementById('title-scroller').style.height = maxHeight + 'px';
+        }
+
         window.onload = function() {
+            const titleElements = document.getElementById('title-scroller').children;
+
             document.addEventListener('scroll', updateActive);
+            window.addEventListener('resize', () => setTitleSize(titleElements));
 
             updateActive();
+            setTitleSize(titleElements);
+
+            makeTitleActive(titleElements, 0);
+
         }
     </script>
 </html>
