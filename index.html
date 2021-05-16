@@ -243,6 +243,7 @@
             #resume-container {
                 font-family: 'Lato', sans-serif;
                 font-size: 24px;
+                text-align: center;
             }
 
             #resume-container:hover {
@@ -253,7 +254,56 @@
             #resume-container a {
                 color:inherit;
                 text-decoration: inherit;
+            }
 
+            #contact-container {
+                display: flex;
+                flex-wrap: wrap; 
+                justify-content: center;
+                margin: 10px 0;
+            }
+
+            #contact-container div {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 3.5px;
+                font-size: 26px;
+            }
+
+            .contact-button {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: #323232;
+                text-align: center;
+                transition: all 200ms;
+                cursor: pointer;
+            }
+
+            #mail-contact:hover {
+                background-color: #e74c3c;
+            }
+
+            #linkedin-contact:hover {
+                background-color: #0072b1;
+            } 
+
+            #github-contact:hover {
+                color: #323232;
+                background-color: white;
+            }
+
+            #kaggle-contact:hover {
+                background-color: #31C1FF;
+            }
+
+            #gitlab-contact:hover {
+                background-color: #fca326;
+            }
+
+            div.contact-button {
+                align-items: center;
+                justify-content: center;
             }
 
             #picture {
@@ -299,10 +349,24 @@
                         <img id='picture' src='portfolio_pic.jpeg'>
                     </div>
                     <div id='contact-container'>
-                        <div id='resume-container'>
-                            <a href='Colin-Siles-Spring-2021-Resume.pdf' download>My Resume<span id='resume-spacer'></span><i class="fas fa-download"></i></a>
+                        <div class='contact-button' id='mail-contact'>
+                            <i class="fas fa-envelope"></i>
                         </div>
-                        <h3>Contact Circles go here</h3>
+                        <div class='contact-button' id='linkedin-contact'>
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class='contact-button' id='github-contact'>
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class='contact-button' id='kaggle-contact'>
+                            <i class="fab fa-kaggle"></i>
+                        </div>
+                        <div class='contact-button' id='gitlab-contact'>
+                            <i class="fab fa-gitlab"></i>
+                        </div>
+                    </div>
+                    <div id='resume-container'>
+                        <a href='Colin-Siles-Spring-2021-Resume.pdf' download>My Resume<span id='resume-spacer'></span><i class="fas fa-download"></i></a>
                     </div>
                 </div>
 
