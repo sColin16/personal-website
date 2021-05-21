@@ -31,6 +31,10 @@
                 color: white;
             }
 
+            h1, h2, h3, h4, h5 h6 {
+                font-family: 'Recursive', sans-serif;
+            }
+
             p {
                 font-family: 'Open Sans', sans-serif;
             }
@@ -158,6 +162,10 @@
             @media (min-width: 576px) {
                 .outer-container {
                     max-width: 576px;
+                }
+
+                #education-container {
+                    text-align: left !important;
                 }
             }
 
@@ -343,22 +351,42 @@
 
             #education-container {
                 margin: 40px 0;
+                text-align: center;
             }
 
-            .education .fa-graduation-cap {
-                font-size: 32px;
-                display: inline-block;
-                margin-right: 10px;
+            #education-container h2 {
+                font-size: 28px;
             }
 
-            .education h3 {
+            .education-section {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+        
+            .education-left {
+                display: flex;
+                justify-content: center;
+                flex-grow: 1;
+            }
+
+            .education-right {
+                flex-grow: 100;
+            }
+
+            .education-left .fa-graduation-cap {
+                font-size: 30px;
+                margin: 10px;
+            }
+
+            .education-right h3 {
                 display: inline-block;
                 margin: 0;
                 font-size: 24px;
             }
 
-            .education h4 {
-                margin: 5px 55px;
+            .education-right h4 {
+                margin: 0;
                 color: #A0A0A0;
                 font-size: 20px;
             }
@@ -475,10 +503,14 @@
 
                     <div id='education-container'>
                         <h2>Education</h2>
-                        <div class='education'>
-                            <i class="fas fa-graduation-cap"></i>
-                            <h3>B.S. Computer Science (May 2022)</h2>
-                            <h4>Colorado School of Mines</h3>
+                        <div class='education-section'>
+                            <div class='education-left'>
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class='education-right'>
+                                <h3>B.S. Computer Science (May 2022)</h2>
+                                <h4>Colorado School of Mines</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
