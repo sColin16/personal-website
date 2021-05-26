@@ -25,6 +25,10 @@
                 box-sizing: border-box;
             }
 
+            html {
+                scroll-behavior: smooth;
+            }
+
             body {
                 margin: 0;
                 background-color: #121212;
@@ -126,8 +130,8 @@
             whoe thing. I change the max size with media queries later*/
             .outer-container {
                 max-width: 100%;
-                padding: 0 30px;
-                margin: 150px auto;
+                padding: 80px 30px;
+                margin: 0 auto;
             }
 
             /* The negative margin is used to allow padding on the flex items */
@@ -235,6 +239,10 @@
 
             #about-section .left {
                 margin-bottom: 20px;
+            }
+
+            #about-section {
+                padding-top: 125px;
             }
 
             .inner-project-container {
@@ -507,9 +515,9 @@
                 </button>
             </div>
             <ul id='nav-partitions'>
-                <li id='about-nav'><h2>About Me</h2></li>
-                <li id='project-nav'><h2>Projects</h2></li>
-                <li id='post-nav'><h2>Posts</h2></li>
+                <a href='#about-section'><li id='about-nav'><h2>About Me</h2></li></a>
+                <a href='#portfolio-section'><li id='project-nav'><h2>Portfolio</h2></li></a>
+                <a href='#post-section'><li id='post-nav'><h2>Posts</h2></li></a>
             </ul>
         </nav>
         <div id='about-section' class='outer-container'>
@@ -596,7 +604,7 @@
             </div>
         </div>
 
-        <div id='project-section' class='outer-container'>
+        <div id='portfolio-section' class='outer-container'>
             <div class='inner-container'>
                 <div class='left'>
                     <h1>Portfolio</h1>
@@ -690,7 +698,7 @@
 
         function updateActive() {
             const about = document.getElementById('about-section');
-            const projects = document.getElementById('project-section');
+            const projects = document.getElementById('portfolio-section');
             const posts = document.getElementById('post-section');
 
             const aboutNav = document.getElementById('about-nav');
