@@ -497,6 +497,38 @@
                 }
             }
 
+            .post-title {
+                margin-top: 0;
+                margin-bottom: 5px;
+            }
+
+            .post-description {
+                margin: 0;
+            }
+
+            .post-container {
+                transition: all 200ms;
+                padding: 15px;
+                margin: 15px 0;
+                border-radius: 8px;
+                background-color: #323232;
+            }
+
+            .post-container:hover {
+                background-color: #525252;
+                transform: scale(1.02);
+                cursor: pointer;
+            }
+
+            .post-date-container .fa-calendar {
+                margin-right: 5px;
+            }
+
+            .post-date-container {
+                margin-top: 0;
+                font-size: 14px;
+            }
+
             footer {
                 text-align: center;
                 margin: 20px 0;
@@ -670,10 +702,26 @@
                     <h1>Posts</h1>
                 </div>
                 <div class='right'>
-                    <h2>Post 1</h2>
-                    <p>A short decsription goes here</p>
-                    <h2>Post 2</h2>
-                    <p>Another short description goes here</p>
+                    <div class='post-container'>
+                        <a href='/posts/making-gearbox'>
+                            <h2 class='post-title'>The Making of Gearbox</h2>
+                            <p class='post-date-container'>
+                                <i class="far fa-calendar" style=" margin-right: 6px; "></i>
+                                <span class='post-date'>5/26/2021</span>
+                            </p>
+                            <p class='post-description'>The extensive iterative design process behind the development of Gearbox</p>
+                        </a>
+                    </div>
+                    <div class='post-container'>
+                        <a href='posts/march-madness-2021'>
+                            <h2 class='post-title'>March Madness Miscalcuations</h2>
+                            <p class='post-date-container'>
+                                <i class="far fa-calendar" style=" margin-right: 6px; "></i>
+                                <span class='post-date'>4/29/2021</span>
+                            </p>
+                            <p class='post-description'>Lessons learned from particpating in Kaggle's 2021 Men's March Madness competition</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
