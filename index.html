@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 
-
 <html>
     <head>
         <!-- Viewport meta tag to make the website responsive-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Font awesome for the 3-bar icon -->
+        <!-- Font awesome for various icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
         <!--Fancy hamburger animations-->
@@ -18,609 +17,75 @@
 
         <!--Favicon-->
         <link rel="icon" type="image/png" href="/favicon.png">
+
+        <!--Custom styling-->
+        <link rel='stylesheet' href='global.css'>
+        <link rel='stylesheet' href='main.css'>
+
         <title>Colin Siles</title>
-        <style>
-            /* The box-sizing property lets us add padding without flexbox blowing up in my face */
-            * {
-                box-sizing: border-box;
-            }
-
-            html {
-                scroll-behavior: smooth;
-            }
-
-            body {
-                margin: 0;
-                background-color: #121212;
-                color: white;
-            }
-
-            h1, h2, h3, h4, h5 h6 {
-                font-family: 'Recursive', sans-serif;
-            }
-
-            p {
-                font-family: 'Open Sans', sans-serif;
-            }
-
-            .outer-container h1 {
-                font-family: 'Recursive', sans-serif;
-                font-weight: 600;
-                font-size: 36px;
-                margin: 0
-            }
-
-            nav {
-                position: fixed;
-                top: 0;
-                width: 100%;
-                background-color: #2A2A2A;
-                z-index: 99;
-            }
-
-            nav ul {
-                position: relative;
-                list-style: none;
-                margin: 0;
-                max-width: 100%;
-                padding: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: all 500ms;
-            }
-
-            nav.open ul {
-                /* This is computed manually, seems to be the best way to do it */
-                max-height: 163px;
-            }
-
-            nav ul li {
-                padding: 10px 20px;
-                color: #A0A0A0;
-                transition: all 200ms;
-            }
-
-            nav ul li h2 {
-                margin: 0;
-                font-family: 'Recursive', sans-serif;
-                font-weight: 600;
-                font-size: 24px;
-                /* padding: 15px 0; */
-            }
-            
-            nav ul li:hover {
-                background-color: #424242;
-                color: white;
-                cursor: pointer;
-            }
-            
-            nav ul li.active {
-                color:white;
-            }
-
-            #main-nav-partition {
-                width: 100%;
-                display: inline-block;
-            }
-
-            #main-nav-partition h1 {
-                display: inline-block;
-                padding: 0 20px;
-                margin: 10px 0;
-                font-family: 'Lobster Two', cursive;
-                font-size: 40px;
-            }
-
-            #nav-hamburger {
-                display: block;
-                float:right;
-                padding: 20px 20px;
-            }
-
-            .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before{
-                height: 4px;
-                border-radius: 1px;
-                background-color: white !important;
-            }
-
-            /* This is used to restrict the size of the content within this
-            container. The flex box and items inside are constrained by this
-            size, preventing them from changing too much as the website resizes,
-            auto margin centers the div.  Padding adds some space around the
-            whoe thing. I change the max size with media queries later*/
-            .outer-container {
-                max-width: 100%;
-                padding: 80px 30px;
-                margin: 0 auto;
-            }
-
-            /* The negative margin is used to allow padding on the flex items */
-            .inner-container {
-                display: flex;
-                flex-wrap: wrap; 
-                justify-content: center;
-                margin-left: -15px;
-                margin-right: -15px;
-            }
-
-            /* Flex basis controls the relative size of the blocks */
-            .left {
-                flex-basis: 100%;
-                max-width: 100%;
-                padding-left: 15px;
-                padding-right: 15px;
-                text-align: center;
-            }
-
-            .right {
-                flex-basis: 100%;
-                max-width: 100%;
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-
-            /* Use the bootstrap breakpoints for device size (since they probably know what they're doing)*/
-
-            /*Extra small devices (below 576px) are the default definitions*/
-            /* TODO: adjust some of these to let them be somewhat larger 
-
-            /* Small devices (landscape phones, 576px and up)*/
-            @media (min-width: 576px) {
-                .outer-container {
-                    max-width: 576px;
-                }
-
-                #education-container {
-                    text-align: left !important;
-                }
-
-                .project-thumbnail-container {
-                    flex-basis: 33%;
-                    max-width: 33% !important;
-                }
-
-                .project-info-container {
-                    flex-basis: 67%;
-                    max-width: 67%;
-                }
-
-                .left {
-                    text-align: left;
-                }
-
-                #headline {
-                    justify-content: flex-start !important;
-                    text-align: left !important;
-                }
-
-                #title-scroller {
-                    justify-content: flex-start !important;
-                }
-
-                .project-info-container h2 {
-                    text-align: left !important;
-                }
-            }
-
-            /* Medium devices (tablets, 768px and up)*/
-            @media (min-width: 768px) {
-                .outer-container {
-                    max-width: 768px;
-                }
-
-                /* Show all menu items when the screen is large enough*/
-                nav ul {
-                    display: inline-flex !important;
-                    width: auto !important;
-                    max-height: none;
-                    vertical-align: super;
-                }
-
-                nav ul li {
-                    padding: 21px 20px;
-                }
-
-                /* Hide the little menu icon*/
-                #nav-hamburger {
-                    display: none !important;
-                }
-
-                #main-nav-partition {
-                    width: auto;
-                    padding-right: 20px;
-                }
-            }
-
-            /* Large devices (desktops, 992px and up) */
-            @media (min-width: 992px) {
-                .outer-container {
-                    max-width: 992px;
-                }
-
-                .left {
-                    max-width: 33%;
-                    flex-grow: 1;
-                }
-
-                .right {
-                    max-width: 67%;
-                    flex-grow: 2;
-                }
-            }
-
-            /* Extra large devices (large desktops, 1200px and up) */
-            @media (min-width: 1200px) {
-                .outer-container {
-                    max-width: 1200px;
-                }
-            }
-
-            #about-section .left {
-                margin-bottom: 20px;
-            }
-
-            #about-section {
-                padding-top: 125px;
-            }
-
-            .inner-project-container {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .outer-project-container {
-                position: relative;
-                background: #2A2A2A;
-                border-radius: 10px;
-                transition: all 200ms;
-                margin: 20px 0;
-            }
-
-            .outer-project-container:hover {
-                transform: scale(1.02);
-                background: #424242;
-                cursor: pointer;
-            }
-
-            .project-thumbnail {
-                max-width: 100%;
-            }
-
-            .project-thumbnail-container {
-                flex-basis: 100%;
-                max-width: 200px;
-                padding: 20px;
-            }
-
-            .project-info-container {
-                padding: 10px;
-            }
-
-            .project-info-container h2 {
-                font-size: 28px;
-                margin-top: 0;
-                text-align: center;
-            }
-
-            .project-tag-container {
-                flex-basis: 100%;
-                flex-wrap: wrap;
-                padding: 10px;
-                display: flex;
-            }
-
-            .project-tag {
-                margin: 5px;
-                padding: 5px;
-                background-color: #424242;
-                border-radius: 5px;
-                transition: all 200ms;
-            }
-
-            .outer-project-container:hover .project-tag {
-                background-color: #626262;
-            }
-
-            .project-links {
-                position: absolute;
-                right: 0;
-                top: 0;
-                margin: 10px;
-            }
-
-            .project-links a {
-                padding: 5px;
-                font-size: 24px;
-            }
-
-            .project-links a i {
-                transition: all 200ms;
-            }
-
-            .project-links a:hover i {
-                /* color: #121212; */
-                transform: scale(1.15);
-            }
-
-            #picture-container {
-                text-align: center;
-            }
-
-            #contact-container {
-                text-align: center;
-            }
-
-            #resume-container {
-                font-family: 'Open Sans', sans-serif;
-                font-size: 24px;
-                text-align: center;
-                transition: all 200ms;
-            }
-
-            #resume-container:hover {
-                color: #0bb5ff;
-                cursor: pointer;
-                transform: scale(1.05);
-            }
-
-            a {
-                color:inherit;
-                text-decoration: inherit;
-            }
-
-            #contact-container {
-                display: flex;
-                flex-wrap: wrap; 
-                justify-content: center;
-                margin: 10px 0;
-            }
-
-            #contact-container div {
-                display: flex;
-                flex-wrap: wrap;
-                margin: 0 3.5px;
-                font-size: 26px;
-            }
-
-            .contact-button {
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                background-color: #323232;
-                text-align: center;
-                transition: all 200ms;
-                cursor: pointer;
-            }
-
-            .contact-button:hover {
-                transform: scale(1.08);
-            }
-
-            #mail-contact:hover {
-                background-color: #e74c3c;
-            }
-
-            #linkedin-contact:hover {
-                background-color: #0072b1;
-            } 
-
-            #github-contact:hover {
-                color: #323232;
-                background-color: white;
-            }
-
-            #kaggle-contact:hover {
-                background-color: #31C1FF;
-            }
-
-            #gitlab-contact:hover {
-                background-color: #fca326;
-            }
-
-            div.contact-button {
-                align-items: center;
-                justify-content: center;
-            }
-
-            #picture {
-                max-width: 100%;
-                /* max-width: 280px; */
-                max-height: 280px;
-                object-fit: cover;
-                object-position: -90% 0%;
-                border-radius:50%;
-            }
-
-            #resume-spacer {
-                padding: 5px;
-            }
-
-            #headline {
-                display: flex;
-                flex-wrap: wrap;
-                margin-top: 0;
-                justify-content: center;
-                text-align: center;
-            }
-
-            #header-prefix {
-                margin-right: 10px;
-            }
-
-            #title-scroller {
-                display: flex;
-                justify-content: center;
-            }
-
-            .title {
-                color: #0BB5FF;
-                display: none; /* Hide by default, make visible with active class */
-            }
-
-            .title.active {
-                display: block;
-                animation: cycleText 2500ms linear infinite 0s;
-            }
-
-            #education-container {
-                margin: 40px 0;
-                text-align: center;
-            }
-
-            #education-container h2 {
-                font-size: 28px;
-            }
-
-            .education-section {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-            }
-        
-            .education-left {
-                display: flex;
-                justify-content: center;
-                flex-grow: 1;
-            }
-
-            .education-right {
-                flex-grow: 100;
-            }
-
-            .education-left .fa-graduation-cap {
-                font-size: 30px;
-                margin: 10px;
-            }
-
-            .education-right h3 {
-                display: inline-block;
-                margin: 0;
-                font-size: 24px;
-            }
-
-            .education-right h4 {
-                margin: 0;
-                color: #A0A0A0;
-                font-size: 20px;
-            }
-
-            @keyframes cycleText {
-                0% {
-                    opacity: 0;
-                    transform: translateY(-15px);
-                }
-                20% {
-                    opacity: 1;
-                    transform: translateY(0px);
-                }
-                80% {
-                    opacity: 1;
-                    transform: translateY(0px);
-                }
-                100% {
-                    opacity: 0;
-                    transform: translateY(15px);
-                }
-            }
-
-            .post-title {
-                margin-top: 0;
-                margin-bottom: 5px;
-            }
-
-            .post-description {
-                margin: 0;
-            }
-
-            .post-container {
-                transition: all 200ms;
-                padding: 15px;
-                margin: 15px 0;
-                border-radius: 8px;
-                background-color: #323232;
-            }
-
-            .post-container:hover {
-                background-color: #525252;
-                transform: scale(1.02);
-                cursor: pointer;
-            }
-
-            .post-date-container .fa-calendar {
-                margin-right: 5px;
-            }
-
-            .post-date-container {
-                margin-top: 0;
-                font-size: 14px;
-            }
-
-            footer {
-                text-align: center;
-                margin: 20px 0;
-            }
-        </style>
     </head>
 
     <body>
-        <nav>
-            <div id='main-nav-partition'>
+        <!-- Navigation Bar -->
+        <header>
+            <!-- Website logo and hamburger menu-->
+            <div id='primary-nav-partition'>
                 <a href='/'><h1>Colin Siles</h1></a>
+
+                <!-- Boilerplate code for fancy hamburger animation -->
                 <button class='hamburger hamburger--collapse' id='nav-hamburger' onclick="toggleNavbar()" type="button">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                       </span>
                 </button>
             </div>
-            <ul id='nav-partitions'>
-                <a href='#about-section'><li id='about-nav'><h2>About Me</h2></li></a>
-                <a href='#portfolio-section'><li id='project-nav'><h2>Portfolio</h2></li></a>
-                <a href='#post-section'><li id='post-nav'><h2>Posts</h2></li></a>
-            </ul>
-        </nav>
-        <div id='about-section' class='outer-container'>
-            <div class='inner-container'>
-                <div class='left'>
-                    <div id='picture-container'>
-                        <img id='picture' src='portfolio_pic.jpeg'>
+
+            <!-- All the menu items in the nav bar-->
+            <nav id='nav-item-container'>
+                <a href='#about-section' id='about-nav' class='nav-item'><h2>About Me</h2></a>
+                <a href='#portfolio-section' id='project-nav' class='nav-item'><h2>Portfolio</h2></a>
+                <a href='#post-section' id='post-nav' class='nav-item'><h2>Posts</h2></a>
+            </nav>
+        </header>
+
+        <main>
+            <section id='about-section'>
+                <div class='left-section-partition section-partition'>
+                    <div id='primary-picture-container'>
+                        <img id='primary-picture' src='portfolio_pic.jpeg'>
                     </div>
+
                     <div id='contact-container'>
+                        <!-- _blank target opens the link in a new tab -->
+                        <!-- noopener and noreferrer are recommended security precautions -->
                         <a href='mailto:colin.siles16@gmail.com' target="_blank" rel="noopener noreferrer">
-                            <div class='contact-button' id='mail-contact'>
-                                <i class="fas fa-envelope"></i>
-                            </div>
+                            <i class="contact-button fas fa-envelope" id='mail-contact'></i>
                         </a>
                         <a href='https://www.linkedin.com/in/colin-siles/' target="_blank" rel="noopener noreferrer">
-                            <div class='contact-button' id='linkedin-contact'>
-                                <i class="fab fa-linkedin-in"></i>
-                            </div>
+                            <i class="contact-button fab fa-linkedin-in" id='linkedin-contact'></i>
                         </a>
                         <a href='https://github.com/sColin16' target='blank' rel='noopener noreferrer'>
-                            <div class='contact-button' id='github-contact'>
-                                <i class="fab fa-github"></i>
-                            </div>
+                            <i class="contact-button fab fa-github" id='github-contact'></i>
                         </a>
                         <a href='https://www.kaggle.com/colinsiles' target='_blank' rel='noopener noreferrer'>
-                            <div class='contact-button' id='kaggle-contact'>
-                                <i class="fab fa-kaggle"></i>
-                            </div>
+                            <i class="contact-button fab fa-kaggle" id='kaggle-contact'></i>
                         </a>
                         <a href='https://gitlab.com/sColin16' target='_blank' rel='noopener noreferrer'>
-                            <div class='contact-button' id='gitlab-contact'>
-                                <i class="fab fa-gitlab"></i>
-                            </div>
+                            <i class="contact-button fab fa-gitlab" id='gitlab-contact'></i>
                         </a>
                     </div>
+
                     <div id='resume-container'>
-                        <a href='Colin-Siles-Spring-2021-Resume.pdf' download>My Resume<span id='resume-spacer'></span><i class="fas fa-download"></i></a>
+                        <a href='Colin-Siles-Spring-2021-Resume.pdf' download>My Resume<i class="fas fa-download"></i></a>
                     </div>
                 </div>
 
-                <div class='right'>
+                <div class='right-section-partition section-partition'>
+                    <!-- Scrolling title accomplished with CSS animations and JS -->
+                    <!-- TODO: add a noscript tag for the scrolling title that just displays my name -->
                     <h1 id='headline'>
-                        <span id='header-prefix'>Hi there! I'm</span>
+                        <span id='headline-prefix'>Hi there! I'm</span>
+                        <!-- This section accepts titles of arbitrary size and number -->
                         <span id='title-scroller'>
                             <span class='title'>Colin Siles</span>
                             <span class='title'>a Software Engineer</span>
@@ -648,6 +113,7 @@
                     I enjoy coding, running, solving puzzles (e.g. Sudoku,
                     Rubik's Cubes), cooking, and reading.</p>
 
+                    <!-- Quick section for education, will add Masters upon application to program -->
                     <div id='education-container'>
                         <h2>Education</h2>
                         <div class='education-section'>
@@ -661,17 +127,23 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <div id='portfolio-section' class='outer-container'>
-            <div class='inner-container'>
-                <div class='left'>
+            <section id='portfolio-section'>
+                <div class='left-section-partition section-partition'>
                     <h1>Portfolio</h1>
+                    <!-- Perhaps a tag search thing will go here too at some point -->
                 </div>
-                <div class='right'>
+
+                <div class='right-section-partition section-partition'>
+                    <!-- All of the project containers are identical -->
+                    <!-- This suggests it may be worth writing some script to compile this -->
+                    <!-- Once I have a bunch of projects, making even small tweaks is a nightmare-->
+
+                    <!-- Outer project containers wrap everything: information, thumbnail, and external links -->
                     <div class='outer-project-container'>
-                        <a href='/projects/visplay'>
+                        <a href='/projects/visplay.html'>
+                            <!-- Inner project containers DO NOT contain the project links  -->
                             <div class='inner-project-container'>
                                 <div class='project-thumbnail-container'>
                                     <img class='project-thumbnail' src='visplay-icon.svg'>
@@ -689,12 +161,15 @@
                                     <p class='project-tag'>Backend</p>
                                 </div>
                             </div>
+
+                            <!-- Project links are positioned in the upper-right-hand corner of the project card-->
                             <div class='project-links'>
                                 <a><i class="fab fa-github"></i></a>
                                 <a><i class="fas fa-external-link-alt"></i></a>
                             </div>
                         </a>
                     </div>
+
                     <div class='outer-project-container'>
                         <a href='/projects/gearbox'>
                             <div class='inner-project-container'>
@@ -721,15 +196,16 @@
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <div id='post-section' class='outer-container'>
-            <div class='inner-container'>
-                <div class='left'>
+            <section id='post-section'>
+                <div class='left-section-partition section-partition'>
                     <h1>Posts</h1>
+                    <!-- Maybe a tag searching function? Not fully on board with adding tags -->
+                    <!-- Maybe by project? But I feel like that will be in the project pages... -->
                 </div>
-                <div class='right'>
+
+                <div class='right-section-partition section-partition'>
                     <div class='post-container'>
                         <a href='/posts/making-gearbox'>
                             <h2 class='post-title'>The Making of Gearbox</h2>
@@ -751,111 +227,14 @@
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
+
+        <!-- Very simple footer :) -->
         <footer>
             <p>&copy; 2021 Colin Siles</p>
         </footer>
     </body>
-    <script>
-        function toggleNavbar() {
-            const navBar = document.querySelector('nav');
-            const hamburger = document.getElementById('nav-hamburger');
 
-            if (navBar.classList.contains('open')) {
-                navBar.classList.remove('open');
-                hamburger.classList.remove('is-active');
-
-            } else {
-                navBar.classList.add('open');
-                hamburger.classList.add('is-active');
-            }
-        }
-
-        function updateActive() {
-            const about = document.getElementById('about-section');
-            const projects = document.getElementById('portfolio-section');
-            const posts = document.getElementById('post-section');
-
-            const aboutNav = document.getElementById('about-nav');
-            const projectNav = document.getElementById('project-nav');
-            const postNav = document.getElementById('post-nav');
-
-            if (about.getBoundingClientRect().bottom > 100) {
-                aboutNav.classList.add('active');
-                projectNav.classList.remove('active');
-                postNav.classList.remove('active');
-
-            } else if (projects.getBoundingClientRect().bottom > 300) {
-                aboutNav.classList.remove('active');
-                projectNav.classList.add('active');
-                postNav.classList.remove('active');
-
-            } else {
-                aboutNav.classList.remove('active');
-                projectNav.classList.remove('active');
-                postNav.classList.add('active');
-            }
-        }
-
-        function makeTitleActive(titleElements, idx) {
-            titleElements[idx].classList.add('active')
-            const animationDuration = Number(getComputedStyle(titleElements[idx])['animation-duration'].slice(0, -1)) * 1000;
-            //const animation
-            // console.log(animationDuration);
-
-            setTimeout(() => makeTitleActive(titleElements, (idx + 1) % (titleElements.length)), animationDuration);
-            setTimeout(() => titleElements[idx].classList.remove('active'), animationDuration);
-        }
-
-        async function setTitleSize(titleElements) {
-            /* Dynamically determine max size of headline to prevent shifting elements */
-            let maxHeight = 0;
-            let maxWidth = 0;
-
-            // Remove any previous width and height constraints
-            document.getElementById('title-scroller').style.width = 'auto';
-            document.getElementById('title-scroller').style.height = 'auto';
-
-            // Iterate over every element to determine it's width and height
-            for (let idx = 0; idx < titleElements.length; idx++) {
-                // Hide all elements, except the target
-                for (let j = 0; j < titleElements.length; j++) {
-                    if (j !== idx) {
-                        titleElements[j].style.display = 'none';
-                    } else {
-                        titleElements[j].style.display = 'block'
-                    }
-                }
-
-                // Determine the resulting height of the element
-                let height = Number(getComputedStyle(titleElements[idx]).height.slice(0, -2));
-                let width = Number(getComputedStyle(titleElements[idx]).width.slice(0, -2));
-
-                maxHeight = Math.max(height, maxHeight);
-                maxWidth = Math.max(width, maxWidth);
-
-                // Clear all the display styles
-                for (let j = 0; j < titleElements.length; j++) {
-                    titleElements[j].style.display = '';
-                }
-            }
-
-            document.getElementById('title-scroller').style.width = maxWidth + 'px';
-            document.getElementById('title-scroller').style.height = maxHeight + 'px';
-        }
-
-        window.onload = function() {
-            const titleElements = document.getElementById('title-scroller').children;
-
-            document.addEventListener('scroll', updateActive);
-            window.addEventListener('resize', () => setTitleSize(titleElements));
-
-            updateActive();
-            setTitleSize(titleElements);
-
-            makeTitleActive(titleElements, 0);
-
-        }
-    </script>
+    <script src='main.js'></script>
 </html>
