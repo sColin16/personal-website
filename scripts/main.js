@@ -1,5 +1,21 @@
 /* Code that makes the main web page interactive (animations, active section detection, etc) */
 
+// Defines the number of projects and posts visible by default. More are revealed by pressing the "Show More" button
+const PROJECT_COUNT_START = 3;
+const POST_COUNT_START = 3;
+
+// The maximum number of projects or posts revelaed when pressing "Show More" (limited by total number of projects/posts)
+const PROJECT_COUNT_INC = 2;
+const POST_COUNT_INC = 2;
+
+// Time in milliseconds that items are offset in becoming visible
+const VISIBLE_DELAY = 100;
+
+// Track the current number of projects and posts visible
+// Global variables, but oh well
+let projectCount = PROJECT_COUNT_START;
+let postCount = POST_COUNT_START;
+
 function toggleNavbar() {
     const navBar = document.querySelector('nav');
     const hamburger = document.getElementById('nav-hamburger');
@@ -43,8 +59,6 @@ function updateActive() {
 function makeTitleActive(titleElements, idx) {
     titleElements[idx].classList.add('active')
     const animationDuration = Number(getComputedStyle(titleElements[idx])['animation-duration'].slice(0, -1)) * 1000;
-    //const animation
-    // console.log(animationDuration);
 
     setTimeout(() => makeTitleActive(titleElements, (idx + 1) % (titleElements.length)), animationDuration);
     setTimeout(() => titleElements[idx].classList.remove('active'), animationDuration);
@@ -87,10 +101,65 @@ async function setTitleSize(titleElements) {
     document.getElementById('title-scroller').style.height = maxHeight + 'px';
 }
 
+function makeChildVisible(children, index, delay) {
+    // Base case: stop making the next child visible after all are complete
+    if (index >= children.length) {
+        return;
+    }
+
+    children[index].classList.remove('hidden');
+    console.log('making visible', index)
+
+    setTimeout(() => makeChildVisible(children, index + 1, delay), delay);
+}
+
+/* Makes hidden projects/posts visible (when pressing the show more button) */
+function makeChildrenVisible(children, currentVisible, increment, delay) {
+    const childrenSubset = Array.from(children).slice(currentVisible, currentVisible + increment);
+
+    makeChildVisible(childrenSubset, 0, delay);
+}
+
 window.onload = function() {
     const titleElements = document.getElementById('title-scroller').children;
 
+    // Make initial projects and posts visible
+    const portfolioContainer = document.querySelector('#portfolio-section .right-section-partition');
+    const postContainer = document.querySelector('#post-section .right-section-partition');
+
+    makeChildrenVisible(portfolioContainer.children, 0, projectCount, VISIBLE_DELAY);
+    makeChildrenVisible(postContainer.children, 0, postCount, VISIBLE_DELAY);
+
+    // Register even listeners for both of the buttons
+    const portfolioShowMoreButton = document.getElementById('portfolio-show-more-button');
+    const postShowMoreButton = document.getElementById('post-show-more-button');
+
+    portfolioShowMoreButton.addEventListener('click', () => {
+        makeChildrenVisible(portfolioContainer.children, projectCount, PROJECT_COUNT_INC, VISIBLE_DELAY);
+
+        projectCount += PROJECT_COUNT_INC;
+
+        // Hide the show more button if we've shown all the projects
+        if (projectCount >= portfolioContainer.children.length - 1) {
+            portfolioShowMoreButton.style.display = 'none'
+        }
+    });
+
+    postShowMoreButton.addEventListener('click', () => {
+        makeChildrenVisible(postContainer.children, postCount, POST_COUNT_INC, VISIBLE_DELAY);
+
+        postCount += POST_COUNT_INC;
+
+        // Hide the show more button if we've shown all the posts
+        if (postCount >= postContainer.children.length - 1) {
+            postShowMoreButton.style.display = 'none'
+        }
+    });
+
+    // Change the "active" menu item on scroll
     document.addEventListener('scroll', updateActive);
+
+    // Adjust the size of the scrolling titles whenever the page is resized
     window.addEventListener('resize', () => setTitleSize(titleElements));
 
     updateActive();

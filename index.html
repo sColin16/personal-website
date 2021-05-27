@@ -141,7 +141,7 @@
                     <!-- Once I have a bunch of projects, making even small tweaks is a nightmare-->
 
                     <!-- Outer project containers wrap everything: information, thumbnail, and external links -->
-                    <div class='outer-project-container'>
+                    <div class='outer-project-container hidden'>
                         <a href='/projects/visplay.html'>
                             <!-- Inner project containers DO NOT contain the project links  -->
                             <div class='inner-project-container'>
@@ -170,7 +170,7 @@
                         </a>
                     </div>
 
-                    <div class='outer-project-container'>
+                    <div class='outer-project-container hidden'>
                         <a href='/projects/gearbox'>
                             <div class='inner-project-container'>
                                 <div class='project-thumbnail-container'>
@@ -195,6 +195,68 @@
                             </div>
                         </a>
                     </div>
+
+                    <div class='outer-project-container hidden'>
+                        <a href='/projects/visplay.html'>
+                            <!-- Inner project containers DO NOT contain the project links  -->
+                            <div class='inner-project-container'>
+                                <div class='project-thumbnail-container'>
+                                    <img class='project-thumbnail' src='/images/visplay-icon.svg'>
+                                </div>
+                                <div class='project-info-container'>
+                                    <h2>Visplay</h2>
+                                    <p>Visplay is an open-source project developed by
+                                    the Colorado School of Mines ACM Chapter. It is a
+                                    digital signage solution that makes improvement on
+                                    the existing software controlling digital displays
+                                    around Mine's campus</p>
+                                </div>
+                                <div class='project-tag-container'>
+                                    <p class='project-tag'>Distributed Systems</p>
+                                    <p class='project-tag'>Backend</p>
+                                </div>
+                            </div>
+
+                            <!-- Project links are positioned in the upper-right-hand corner of the project card-->
+                            <div class='project-links'>
+                                <a><i class="fab fa-github"></i></a>
+                                <a><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class='outer-project-container hidden'>
+                        <a href='/projects/gearbox'>
+                            <div class='inner-project-container'>
+                                <div class='project-thumbnail-container'>
+                                    <img class='project-thumbnail' src='/images/gearbox-icon.png'>
+                                </div>
+                                <div class='project-info-container'>
+                                    <h2>Gearbox</h2>
+                                    <p>Gearbox is JavaScript framework to simulate
+                                    reinforcement learning enviornments. It boasts a
+                                    more complete feature set than existing
+                                    libraries, including multi-agent and complex
+                                    state handling abilities</p>
+                                </div>
+                                <div class='project-tag-container'>
+                                    <p class='project-tag'>Reinforcement Learning</p>
+                                    <p class='project-tag'>JavaScript</p>
+                                </div>
+                            </div>
+                            <div class='project-links'>
+                                <a><i class="fab fa-github"></i></a>
+                                <a><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class='show-more-button-container'>
+                        <button class='show-more-button' id='portfolio-show-more-button'>
+                            Show More
+                        </button>
+                    </div>
                 </div>
             </section>
 
@@ -206,7 +268,7 @@
                 </div>
 
                 <div class='right-section-partition section-partition'>
-                    <div class='post-container'>
+                    <div class='post-container hidden'>
                         <a href='/posts/making-gearbox'>
                             <h2 class='post-title'>The Making of Gearbox</h2>
                             <p class='post-date-container'>
@@ -216,7 +278,7 @@
                             <p class='post-description'>The extensive iterative design process behind the development of Gearbox</p>
                         </a>
                     </div>
-                    <div class='post-container'>
+                    <div class='post-container hidden'>
                         <a href='/posts/march-madness-2021'>
                             <h2 class='post-title'>March Madness Miscalcuations</h2>
                             <p class='post-date-container'>
@@ -226,6 +288,56 @@
                             <p class='post-description'>Lessons learned from particpating in Kaggle's 2021 Men's March Madness competition</p>
                         </a>
                     </div>
+
+                    <!-- Extra dummy posts for the show more button -->
+                    <div class='post-container hidden'>
+                        <a href='/posts/making-gearbox'>
+                            <h2 class='post-title'>The Making of Gearbox</h2>
+                            <p class='post-date-container'>
+                                <i class="far fa-calendar" style=" margin-right: 6px; "></i>
+                                <span class='post-date'>5/26/2021</span>
+                            </p>
+                            <p class='post-description'>The extensive iterative design process behind the development of Gearbox</p>
+                        </a>
+                    </div>
+                    <div class='post-container hidden'>
+                        <a href='/posts/march-madness-2021'>
+                            <h2 class='post-title'>March Madness Miscalcuations</h2>
+                            <p class='post-date-container'>
+                                <i class="far fa-calendar" style=" margin-right: 6px; "></i>
+                                <span class='post-date'>4/29/2021</span>
+                            </p>
+                            <p class='post-description'>Lessons learned from particpating in Kaggle's 2021 Men's March Madness competition</p>
+                        </a>
+                    </div>
+
+                    <div class='post-container hidden'>
+                        <a href='/posts/making-gearbox'>
+                            <h2 class='post-title'>The Making of Gearbox</h2>
+                            <p class='post-date-container'>
+                                <i class="far fa-calendar" style=" margin-right: 6px; "></i>
+                                <span class='post-date'>5/26/2021</span>
+                            </p>
+                            <p class='post-description'>The extensive iterative design process behind the development of Gearbox</p>
+                        </a>
+                    </div>
+                    <div class='post-container hidden'>
+                        <a href='/posts/march-madness-2021'>
+                            <h2 class='post-title'>March Madness Miscalcuations</h2>
+                            <p class='post-date-container'>
+                                <i class="far fa-calendar" style=" margin-right: 6px; "></i>
+                                <span class='post-date'>4/29/2021</span>
+                            </p>
+                            <p class='post-description'>Lessons learned from particpating in Kaggle's 2021 Men's March Madness competition</p>
+                        </a>
+                    </div>
+
+                    <div class='show-more-button-container'>
+                        <button class='show-more-button' id='post-show-more-button'>
+                            Show More
+                        </button>
+                    </div>
+                </div>
                 </div>
             </section>
         </main>

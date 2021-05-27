@@ -42,6 +42,20 @@ section {
     text-align: center;
 }
 
+/* "hidden" project/post stylings */
+.hidden {
+    /* padding: 0 !important; */
+    transform: scale(0);
+    height: 0;
+    width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    /* max-height: 0; */
+    /* max-width: 0; */
+    /* overflow: hidden; */
+}
+
 /* Responsive adjustments to general structure */
 /* Increases maximum width of the sections, and controls stacked/side-by-side format */
 @media (min-width: 576px) {
@@ -378,6 +392,30 @@ section {
 
 .project-links a:hover i {
     transform: scale(1.15);
+}
+
+/* Show more  button styling */
+.show-more-button-container {
+    width: 100%;
+    text-align: center;
+}
+
+.show-more-button {
+    padding: 10px 20px;
+    background-color: #2A2A2A;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    transition: all 200ms;
+    margin: 20px 0;
+}
+
+.show-more-button:hover {
+    background-color: #424242;
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 /* Responsive adjustments to the projects section */
