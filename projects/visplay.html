@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
         <!--Fancy hamburger animations-->
-        <link href="hamburgers.min.css" rel="stylesheet">
+        <link href="/styles/hamburgers.min.css" rel="stylesheet">
 
         <!--Google Fonts-->
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,23 +19,35 @@
         <link rel="icon" type="image/png" href="/favicon.png">
         <title>Colin Siles | Visplay</title>
 
-        <style>
-            body {
-                margin: 0;
-                background-color: #121212;
-                color: white;
-            }
-
-            h1, h2, h3, h4, h5 h6 {
-                font-family: 'Recursive', sans-serif;
-            }
-
-            p {
-                font-family: 'Open Sans', sans-serif;
-            }
-        </style>
+        <!-- Custom Styling -->
+        <link rel='stylesheet' href='/styles/global.css'>
+        <link rel='stylesheet' href='/styles/projects.css'>
     </head>
+    <!-- All the project pages should have more or less identical formatting-->
+    <!-- Yet another reason to have something generate the HTML for me -->
     <body>
+        <header>
+            <!-- Just put the logo for now, links don't go to the write place due to animations -->
+            <div id='primary-nav-partition'>
+                <a href='/'><h1>Colin Siles</h1></a>
+            </div>
+        </header>
 
+        <main>
+            <!-- I think we have the primary section (maybe separate section for title and optional picture?), and related post section -->
+            <section>
+                <h1>Experimental spacer</h1>
+                <h1>Visplay</h1>
+                <p>Here is a short description of Visplay. I can write about the project until I get bored</p>
+            </section>
+            <section>
+                <h2>Related Posts</h2>
+                <p>Possible we do the same styling as the main page?</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2021 Colin Siles</p>
+        </footer>
     </body>
 </html>

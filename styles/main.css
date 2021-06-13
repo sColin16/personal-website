@@ -18,6 +18,10 @@ main h1 {
     margin: 0
 }
 
+section:first-child {
+    padding-top: 125px;
+}
+
 /* Center the content of each section */
 section {
     padding: 80px 0;
@@ -474,11 +478,3 @@ section {
     font-size: 14px;
 }
 
-/***************
- * Footer Styles
- ***************/
-
-footer {
-    text-align: center;
-    margin: 20px 0;
-}

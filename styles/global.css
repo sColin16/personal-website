@@ -132,3 +132,12 @@ nav.open {
         padding-right: 20px;
     }
 }
+
+/***************
+ * Footer Styles
+ ***************/
+
+footer {
+    text-align: center;
+    margin: 20px 0;
+}
