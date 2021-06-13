@@ -10,6 +10,8 @@
 
 html {
     scroll-behavior: smooth; /* Desktop-only smooth scrolling behavoir */
+    position: relative;
+    min-height: 100%;
 }
 
 body {
@@ -140,4 +142,7 @@ nav.open {
 footer {
     text-align: center;
     margin: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
