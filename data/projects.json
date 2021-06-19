@@ -1,0 +1,17 @@
+{
+    "projects": [
+        {
+            "name": "Visplay",
+            "start_date": "September 2019",
+            "end_date": "Present",
+            "icon": "/images/visplay-icon.svg"
+        },
+
+        {
+            "name": "Gearbox",
+            "start_date": "September 2019",
+            "end_date": "Present",
+            "icon": "/images/gearbox-icon.png"
+        }
+    ]
+}

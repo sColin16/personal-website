@@ -1,0 +1,19 @@
+{
+    "posts": [
+        {
+            "title": "The Making of Gearbox",
+            "date": "5/26/2021",
+            "description": "The extensive iterative design process behind the development of Gearbox"
+        },
+        {
+            "title": "March Madness Miscalculations",
+            "date": "4/29/2021",
+            "description": "Lessons learned from participating in Kaggle's 2021 Men's March Madness competition"
+        },
+        {
+            "title": "A Year In Review",
+            "date": "6/1/2021",
+            "description": "Reviewing my growth through the projects I've made in the past year"
+        }
+    ]
+}
