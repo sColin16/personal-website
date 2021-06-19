@@ -13,7 +13,10 @@ export default function Layout({ children, home }) {
     return (
         <>
             <Head>
-                <link rel="icon" type="image/png" href="/favicon.png"></link>
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Lobster+Two&family=Recursive:wght@400;600&family=Ubuntu:wght@400;600&display=swap" rel="stylesheet" />
+
+                <link rel="icon" type="image/png" href="/favicon.png" />
             </Head>
 
             <Header home={home} />

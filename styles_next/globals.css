@@ -1,16 +1,35 @@
+* {
+    box-sizing: border-box; /* Allows adding padding to flexbox items with flex-basis*/
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth; /* Desktop-only smooth scrolling behavoir */
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #121212;
+    color: white;
+}
+
+h1, h2, h3, h4, h5 h6 {
+    font-family: 'Recursive', sans-serif;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Prevent links from having the blue highlight styling */
 a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+    color:inherit;
+    text-decoration: inherit;
 }
