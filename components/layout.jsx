@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Header from './header'
 import Footer from './footer'
+import classNames from 'classnames'
+import styles from './styles/layout.module.css'
 
 /**
  * Outer-most component that wraps all pages to include the header and footer
@@ -9,6 +11,7 @@ import Footer from './footer'
  * @param {boolean} props.home Whether or not this is the home page, to customize header appearance
  * @returns {ReactElement}
  */
+
 export default function Layout({ children, home }) {
     return (
         <>
@@ -20,7 +23,7 @@ export default function Layout({ children, home }) {
             </Head>
 
             <Header home={home} />
-            <main>
+            <main className={classNames({[styles.home_container]: home})}>
                 {children}
             </main>
             <Footer />
