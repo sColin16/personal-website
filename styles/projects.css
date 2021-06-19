@@ -1,0 +1,50 @@
+/* Limit the width of all text on the page and center it */
+main {
+    padding: 110px 0;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+.post-header-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.post-header-container div {
+    margin-left: 20px;
+}
+
+img {
+    height: 100px;
+}
+
+.project-links {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px;
+}
+
+.project-links a {
+    padding: 5px;
+    font-size: 24px;
+}
+
+.project-links a i {
+    transition: all 200ms;
+}
+
+.project-links a:hover i {
+    transform: scale(1.15);
+    cursor: pointer;
+}

@@ -36,9 +36,41 @@
         <main>
             <!-- I think we have the primary section (maybe separate section for title and optional picture?), and related post section -->
             <section>
-                <h1>Experimental spacer</h1>
-                <h1>Visplay</h1>
-                <p>Here is a short description of Visplay. I can write about the project until I get bored</p>
+                <div class='post-header-container'>
+                    <img class='project-thumbnail' src='/images/visplay-icon.svg'>
+                    
+                   <div>
+                        <h1>Visplay</h1>
+                        <p class='post-date-container'>
+                            <i class="far fa-calendar" style=" margin-right: 6px; "></i>
+                            <span class='post-date'>Sept. 2019 - Present</span>
+                        </p>
+
+                    </div>
+
+                    <div class='project-links'>
+                        <a><i class="fab fa-github"></i></a>
+                        <a><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <p>Visplay is an open-source project developed by the Colorado
+                School of Mines ACM Chapter. It is a digital signage solution
+                that makes improvement on the existing software controlling
+                digital displays around Mine's campus</p>
+                
+                <p>Although still a work in progress, major progress has been
+                made. There exists custom rendering software, a custom
+                distributed data store, and a simple web client to configure
+                displays
+                </p>
+
+                <p>My primary contribution has been developing the distributed
+                data store. Due to the distributed nature of the system, there
+                is no centralized data store. Rather, all data is stored in a
+                CRDT (conflict-free replicated data type) on a Matrix server. I
+                have done the work to develop specification and implementation
+                of these CRDTs</p>
             </section>
             <section>
                 <h2>Related Posts</h2>
