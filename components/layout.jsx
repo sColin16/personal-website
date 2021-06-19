@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Header from './header'
+import Footer from './footer'
 
 /**
  * Outer-most component that wraps all pages to include the header and footer
@@ -14,7 +16,7 @@ export default function Layout({ children, home }) {
                 <link rel="icon" type="image/png" href="/favicon.png"></link>
             </Head>
 
-            <Header home />
+            <Header home={home} />
             <main>
                 {children}
             </main>
