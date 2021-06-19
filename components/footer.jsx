@@ -1,6 +1,7 @@
+import styles from './styles/footer.module.css'
 
-export default function Footer ({ }) {
+export default function Footer() {
     return (
-        <foooter>&copy; 2021 Colin Siles</foooter>
+        <foooter className={styles.footer}><p>&copy; 2021 Colin Siles</p></foooter>
     )
 }
