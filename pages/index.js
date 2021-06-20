@@ -8,10 +8,15 @@ import PostsSection from '../components/postsSection'
 
 export default function Home() {
   return (
-    <Layout home>
-      <AboutSection />
-      <PortfolioSection />
-      <PostsSection />
-    </Layout>
+    <>
+      <Head>
+        <title>Colin Siles</title>
+      </Head>
+      <Layout home>
+        <AboutSection />
+        <PortfolioSection />
+        <PostsSection />
+      </Layout>
+    </>
   )
 }
