@@ -12,6 +12,10 @@
     margin: 0;
 }
 
+.home_container h2 {
+    font-size: 28px;
+}
+
 .home_container section:first-child {
     padding-top: 125px;
 }

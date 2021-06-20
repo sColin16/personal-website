@@ -32,6 +32,6 @@
     transform: scale(1.05);
 }
 
-.resume_download .fa-download {
+.resume_download i {
     padding-left: 10px;
 }

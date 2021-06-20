@@ -1,0 +1,45 @@
+
+.container {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.right {
+    flex-grow: 100; /* large flex-gorw relatvei to left partition makes only this one grow */
+}
+
+.left i {
+    font-size: 30px;
+    margin: 10px;
+}
+
+.right h3 {
+    display: inline-block;
+    margin: 0;
+    font-size: 24px;
+}
+
+.right h4 {
+    margin: 0;
+    color: #A0A0A0;
+    font-size: 20px;
+}
+
+@media (min-width: 576px) {
+    /* Left align all the education information */
+    .container {
+        text-align: left !important;
+    }
+}
