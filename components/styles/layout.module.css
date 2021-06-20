@@ -2,8 +2,12 @@
 /* Restrict the width of the flexbox containers */
 .home_container {
     max-width: 100%;
-    padding: 45px 30px;
+    padding: 0 30px;
     margin: 0 auto;
+}
+
+.home_container section:first-child {
+    padding-top: 125px;
 }
 
 /* The width of the home container is responsive */
