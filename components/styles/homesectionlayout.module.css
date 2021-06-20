@@ -26,12 +26,6 @@
     composes: section_partition;
 }
 
-.left_section_partition h1 {
-    font-weight: 600;
-    font-size: 36px;
-    margin: 0
-}
-
 @media (min-width: 576px) {
     .left_section_partition {
         text-align: left;
