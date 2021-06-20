@@ -14,7 +14,7 @@ const RESUME = "/Colin-Siles-Spring-2021-Resume.pdf"
 export default function AboutSectionLeft() {
     return (
         <div className={styles.left_container}>
-            <img className={styles.image} src={'/portfolio_pic.jpeg'} />
+            <img className={styles.image} src={'/profile_pic.jpg'} />
 
             <div className={styles.contact_container}>
                 {CONTACT_BUTTONS.map(props => (
@@ -22,8 +22,7 @@ export default function AboutSectionLeft() {
                 ))}
             </div>
             <div className={styles.resume_download}>
-                <a
-                    href={RESUME}
+                <a href={RESUME}
                     download>
 
                     My Resume <i className="fas fa-download" />

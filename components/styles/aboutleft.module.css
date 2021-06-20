@@ -13,7 +13,7 @@
 
 .image {
     max-width: 100% !important;   /* max-width and max-height like this limits the size and maintains aspect ratio */
-    max-height: 280px !important;
+    max-height: 320px !important;
     object-fit: cover !important;
     object-position: -90% 0%;
     border-radius:50%;
