@@ -1,25 +1,32 @@
+import ScrollingTitle from "./scrollingTitle"
 import EducationContainer from "./educationContainer"
+import styles from './styles/aboutright.module.css'
+
+const TITLES = ['Colin Siles', 'a Software Engineer', 'a Data Scientist']
 
 export default function AboutSectionRight() {
     return (
         <>
-            <h1>Hi there! I'm Colin Siles</h1>
+            <h1 className={styles.headline}>
+                <span className={styles.headline_prefix}>Hi there! I'm </span>
+                <ScrollingTitle titles={TITLES}/>
+            </h1>
 
-            <p>I'm a student at Colorado School of Mines pursuing a B.S.  in
-            Computer Science, with a focus in Data Science. My interests include web
-            development, machine learning, and distributed systems. I plan to pursue
-            a Master's in Computer Science upon completion of my Bachelor's.</p>
+            <p>I'm a student at Colorado School of Mines pursuing a B.S. in
+            Computer Science, with a focus in Data Science. My interests include
+            full-stack web development, machine learning, and distributed
+            systems. I plan to pursue a Master's in Computer Science upon
+            completion of my Bachelor's.</p>
 
             <p>I fell in love with coding when I was about ten, programming a
-            Lego robot to do anything I could imagine.  Since then, I've
-            continued learning new things, including machine learning, artifical
-            intelligence, full-stack web development, API design, SOLID design
-            principles, and more, through personal projects, and industry
-            experience. I'm excited to continue learning new skills!</p>
+            Lego robot to do whatever I could imagine. Since then, I've
+            continued expanding my repetoire of skills, through personal
+            projects, formal education, and industry experience. I'm excited to
+            continue learning new skills!</p>
 
             <p>Outside of software development, I'm also passionate about being
-            a mentor, and sharing my knowledge to help others expand their own
-            arsenal of skills. In my free time, I enjoy coding, running, solving
+            a mentor, having been a TA for Computer Science classes for many
+            semesters. In my free time, I enjoy coding, running, solving
             puzzles (e.g. Sudoku, Rubik's Cubes), cooking, and reading.</p>
 
             <EducationContainer />
