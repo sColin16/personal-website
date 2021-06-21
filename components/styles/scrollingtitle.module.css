@@ -13,6 +13,12 @@
     animation: cycleText 2500ms linear infinite 0s;
 }
 
+@media (min-width: 576px) {
+    .container {
+        justify-content: flex-start !important;
+    }
+}
+
 /* Definition of the animation for cycling titles */
 @keyframes cycleText {
     0% {
