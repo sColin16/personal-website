@@ -24,8 +24,19 @@ h1, h2, h3, h4, h5 h6 {
     font-family: 'Recursive', sans-serif;
 }
 
+h1 {
+    font-weight: 600;
+    font-size: 36px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 28px;
+}
+
 p {
     font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
 }
 
 /* Prevent links from having the blue highlight styling */
