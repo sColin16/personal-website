@@ -11,6 +11,13 @@
     padding-top: 125px;
 }
 
+/* Styles for project info and post pages */
+.info_container {
+    padding: 110px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 /* The width of the home container is responsive */
 @media (min-width: 576px) {
     .home_container {

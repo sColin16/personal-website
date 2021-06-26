@@ -25,7 +25,7 @@ export default function Layout({ children, home }) {
             </Head>
 
             <Header home={home} />
-            <main className={classNames({[styles.home_container]: home})}>
+            <main className={classNames({[styles.home_container]: home, [styles.info_container]: !home})}>
                 {children}
             </main>
             <Footer />

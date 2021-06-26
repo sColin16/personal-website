@@ -58,8 +58,10 @@ export default function Header({ home }) {
             setActiveSectionId(newActiveSection); 
         }
 
-        updateActive()
-        window.addEventListener('scroll', updateActive);
+        if (home) {
+            updateActive()
+            window.addEventListener('scroll', updateActive);
+        }
 
         // Remove the event listener on unmount
         return () => {
