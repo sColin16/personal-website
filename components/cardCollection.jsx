@@ -19,7 +19,6 @@ export default function CardCollection({ initialCards, increment, displayDelay, 
 
     // Shows an individual card, and schedules displaying the next card
     function showNextCard(remaining) {
-        console.log('calling', remaining)
         // Base case: no more cards are set to be shown, or all cards in the collection have been shown
         if (remaining <= 0 || numShownCards >= children.length) {
             return
