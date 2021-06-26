@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles_next/Home.module.css'
 import Layout from '../components/layout'
 import AboutSection from '../components/aboutSection'
 import PortfolioSection from '../components/portfolioSection'
