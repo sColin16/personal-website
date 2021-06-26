@@ -1,17 +1,52 @@
 {
     "projects": [
         {
+            "id": "visplay",
             "name": "Visplay",
-            "start_date": "September 2019",
-            "end_date": "Present",
-            "icon": "/images/visplay-icon.svg"
+            "thumbnail": "/visplay-icon.svg",
+            "description": "A digital signage solution that makes improvement on the existing software controlling digital displays around Mine\"s campus",
+            "links": [ {"href": "https://gitlab.com/ColoradoSchoolOfMines/visplay", "icon": "fab fa-gitlab"}, {"href": "https://coloradoschoolofmines.gitlab.io/visplay/", "icon": "fas fa-external-link-alt"} ],
+            "tags": ["Distributed Systems", "Backend"]
         },
-
         {
-            "name": "Gearbox",
-            "start_date": "September 2019",
-            "end_date": "Present",
-            "icon": "/images/gearbox-icon.png"
+            "id": "visplay",
+            "name": "Visplay",
+            "thumbnail": "/visplay-icon.svg",
+            "description": "A digital signage solution that makes improvement on the existing software controlling digital displays around Mine\"s campus",
+            "links": [ {"href": "https://gitlab.com/ColoradoSchoolOfMines/visplay", "icon": "fab fa-gitlab"}, {"href": "https://coloradoschoolofmines.gitlab.io/visplay/", "icon": "fas fa-external-link-alt"} ],
+            "tags": ["Distributed Systems", "Backend"]
+        },
+        {
+            "id": "visplay",
+            "name": "Visplay",
+            "thumbnail": "/visplay-icon.svg",
+            "description": "A digital signage solution that makes improvement on the existing software controlling digital displays around Mine\"s campus",
+            "links": [ {"href": "https://gitlab.com/ColoradoSchoolOfMines/visplay", "icon": "fab fa-gitlab"}, {"href": "https://coloradoschoolofmines.gitlab.io/visplay/", "icon": "fas fa-external-link-alt"} ],
+            "tags": ["Distributed Systems", "Backend"]
+        },
+        {
+            "id": "visplay",
+            "name": "Visplay",
+            "thumbnail": "/visplay-icon.svg",
+            "description": "A digital signage solution that makes improvement on the existing software controlling digital displays around Mine\"s campus",
+            "links": [ {"href": "https://gitlab.com/ColoradoSchoolOfMines/visplay", "icon": "fab fa-gitlab"}, {"href": "https://coloradoschoolofmines.gitlab.io/visplay/", "icon": "fas fa-external-link-alt"} ],
+            "tags": ["Distributed Systems", "Backend"]
+        },
+        {
+            "id": "visplay",
+            "name": "Visplay",
+            "thumbnail": "/visplay-icon.svg",
+            "description": "A digital signage solution that makes improvement on the existing software controlling digital displays around Mine\"s campus",
+            "links": [ {"href": "https://gitlab.com/ColoradoSchoolOfMines/visplay", "icon": "fab fa-gitlab"}, {"href": "https://coloradoschoolofmines.gitlab.io/visplay/", "icon": "fas fa-external-link-alt"} ],
+            "tags": ["Distributed Systems", "Backend"]
+        },
+        {
+            "id": "visplay",
+            "name": "Visplay",
+            "thumbnail": "/visplay-icon.svg",
+            "description": "A digital signage solution that makes improvement on the existing software controlling digital displays around Mine\"s campus",
+            "links": [ {"href": "https://gitlab.com/ColoradoSchoolOfMines/visplay", "icon": "fab fa-gitlab"}, {"href": "https://coloradoschoolofmines.gitlab.io/visplay/", "icon": "fas fa-external-link-alt"} ],
+            "tags": ["Distributed Systems", "Backend"]
         }
     ]
 }
