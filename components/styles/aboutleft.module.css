@@ -1,0 +1,37 @@
+.left_container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the contact cards under the picture */
+    align-items: center;
+    margin: 10px 0;
+}
+
+.image {
+    max-width: 100% !important;   /* max-width and max-height like this limits the size and maintains aspect ratio */
+    max-height: 320px !important;
+    object-fit: cover !important;
+    object-position: -90% 0%;
+    border-radius:50%;
+}
+
+.resume_download {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    transition: all 200ms;
+}
+
+/* Scale download button on hover, consistent with rest of the UI */
+.resume_download:hover {
+    color: #0bb5ff;
+    transform: scale(1.05);
+}
+
+.resume_download i {
+    padding-left: 10px;
+}

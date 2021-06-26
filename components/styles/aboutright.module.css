@@ -1,0 +1,18 @@
+.headline {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    justify-content: center;
+    text-align: center;
+}
+
+.headline_prefix {
+    margin-right: 10px;
+}
+
+@media (min-width: 576px) {
+    .headline {
+        justify-content: flex-start;
+        text-align: left;
+    }
+}

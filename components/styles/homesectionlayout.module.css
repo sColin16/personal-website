@@ -1,0 +1,45 @@
+/* Center the content of each section */
+.section {
+    padding: 80px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -15px; /* Negative margin accounts for the positive padding on section partitions */
+    margin-right: -15px;
+}
+
+/* By default, the left and right parts of each section stack on top of one another */
+.section_partition {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* By default, center the left section headers when the screen is small */
+.left_section_partition {
+    composes: section_partition;
+    text-align: center;
+}
+
+.right_section_partition {
+    composes: section_partition;
+}
+
+@media (min-width: 576px) {
+    .left_section_partition {
+        text-align: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .left_section_partition {
+        max-width: 33%;
+        flex-grow: 1;
+    }
+
+    .right_section_partition {
+        max-width: 67%;
+        flex-grow: 2;
+    }
+}

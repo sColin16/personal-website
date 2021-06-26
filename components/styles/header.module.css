@@ -1,0 +1,85 @@
+.header {
+    position: fixed; /* Keeps the bar ar the top */
+    top: 0;
+    width: 100%;
+    background-color: #2A2A2A;
+    z-index: 99; /* Keeps the bar above everything else on the page (specifically the scrolling titles) */
+}
+
+.nav {
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+    max-height: 0; /* max-height allows for animations to make the menu grow */
+    overflow: hidden; /* Hide all the menu items by default */
+    transition: all 500ms;
+    vertical-align: super; /* Center everything */
+}
+
+/* Defines change when the nav bar is opened on mobile devices */
+.open {
+    /* TODO: find a JS way to determine the appropriate height, probably with 
+     * similar strategies to the cycling title size determination */
+
+    max-height: 163px; /* This is computed manually, simplest pure-CSS method */
+}
+
+.nav h2 {
+    padding: 10px 20px;
+    color: #A0A0A0;
+    transition: all 200ms;
+    margin: 0;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.nav h2:hover {
+    background-color: #424242;
+    color: white;
+}
+
+.nav h2.active {
+    color: white;
+}
+
+.primary_nav_partition {
+    width: 100%;
+    display: inline-block;
+}
+
+.primary_nav_partition h1 {
+    display: inline-block;
+    padding: 0 20px;
+    margin: 10px 0;
+    font-family: 'Lobster Two', cursive;
+    font-size: 40px;
+}
+
+.hamburger_container {
+    display: block;
+    float: right;
+    padding: 10px;
+}
+
+@media (min-width: 768px){
+    /* Make the full menu appear when the screen is wide enough */
+    .nav {
+        display: inline-flex !important;
+        width: auto !important;
+        max-height: none;
+    }
+
+    .nav h2 {
+        padding: 21px 20px;
+    }
+
+    /* Make the hamburger vanish when the screen is wide enough */
+    .hamburger_container {
+        display: none !important;
+    }
+
+    .primary_nav_partition {
+        width: auto;
+        padding-right: 20px;
+    }
+}

@@ -1,0 +1,44 @@
+
+/* Restrict the width of the flexbox containers */
+.home_container {
+    max-width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+
+.home_container section:first-child {
+    padding-top: 125px;
+}
+
+/* Styles for project info and post pages */
+.info_container {
+    padding: 110px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* The width of the home container is responsive */
+@media (min-width: 576px) {
+    .home_container {
+        max-width: 576px;
+    }
+}
+
+@media (min-width: 768px) {
+    .home_container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 992px) {
+    .home_container {
+        max-width: 992px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .home_container {
+        max-width: 1200px;
+    }
+}
