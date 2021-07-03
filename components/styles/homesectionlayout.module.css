@@ -32,7 +32,7 @@
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .left_section_partition {
         max-width: 33%;
         flex-grow: 1;
