@@ -20,6 +20,7 @@
 }
 
 .thumbnail_container {
+    text-align: center;
     flex-basis: 100%; /* Take up the full width of the card for small screens */
     max-width: 200px; /* Restrict size of the thumbnails so they aren't absurd */
     padding: 20px;

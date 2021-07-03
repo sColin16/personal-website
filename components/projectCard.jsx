@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from './styles/projectcard.module.css'
 
 export default function ProjectCard({ projectInfo }) {
@@ -7,7 +8,7 @@ export default function ProjectCard({ projectInfo }) {
             <Link href={`/project/${projectInfo.id}`}>
                 <div className={styles.inner_container}>
                     <div className={styles.thumbnail_container}>
-                        <img src={projectInfo.thumbnail} />
+                        <Image src={projectInfo.thumbnail} alt={`${projectInfo.name} thumbnail`} width={200} height={200}/>
                     </div>
                     <div className={styles.info_container}>
                         <h2>{projectInfo.name}</h2>

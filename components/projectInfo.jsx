@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styles from './styles/projectinfo.module.css'
 
 /**
@@ -8,7 +9,7 @@ export default function ProjectInfo({ projectInfo }) {
     return (
         <section>
             <div className={styles.header}>
-                <img src={projectInfo.thumbnail} />
+                <Image src={projectInfo.thumbnail} alt={`${projectInfo.name} thumbnail`} width={100} height={100}/>
 
                 <div>
                     <h1>{projectInfo.name}</h1>
