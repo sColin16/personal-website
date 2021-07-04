@@ -12,8 +12,7 @@
 .section_partition {
     flex-basis: 100%;
     max-width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 8px; /* Less padding on small devices (maximizes card widths */
 }
 
 /* By default, center the left section headers when the screen is small */
@@ -33,6 +32,9 @@
 }
 
 @media (min-width: 1200px) {
+    .section_partition {
+        padding: 0 15px; /* More padding on larger devices */
+    }
     .left_section_partition {
         max-width: 33%;
         flex-grow: 1;
