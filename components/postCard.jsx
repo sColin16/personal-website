@@ -5,7 +5,9 @@ export default function PostCard({ postInfo }) {
     return (
         <Link href={`/posts/${postInfo.id}`}>
             <div className={styles.container}>
-                <h2>{postInfo.title}</h2>
+                <div className={styles.title_wrapper}>
+                    <h2>{postInfo.title}</h2>
+                </div>
                 <p className={styles.date_container}>
                     <i className="far fa-calendar"></i>
                     <span>{postInfo.date}</span>
