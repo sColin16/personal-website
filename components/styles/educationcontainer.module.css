@@ -13,11 +13,11 @@
 .left {
     display: flex;
     justify-content: center;
-    flex-grow: 1;
+    width: 100%;
 }
 
 .right {
-    flex-grow: 100; /* large flex-gorw relatvei to left partition makes only this one grow */
+    flex-grow: 1; /* large flex-gorw relatvei to left partition makes only this one grow */
 }
 
 .left i {
@@ -37,9 +37,13 @@
     font-size: 20px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
     /* Left align all the education information */
     .container {
         text-align: left !important;
+    }
+
+    .left {
+        width: auto;
     }
 }
