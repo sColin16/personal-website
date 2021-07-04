@@ -14,4 +14,8 @@
     .card_constraints {
         width: 50%;
     }
+
+    .container_constraints {
+        justify-content: flex-start;
+    }
 }
