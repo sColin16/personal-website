@@ -34,7 +34,6 @@
 
 .container p {
     font-size: 16px;
-    font-weight: 500;
     margin: 12px 0;
 }
 
@@ -53,6 +52,7 @@
     border-radius: 4px;
     transition: all 200ms;
     color: #2a2a2a;
+    font-weight: 600;
 }
 
 /* Increase brightness of tag when project card is hovered so thye are still visible */

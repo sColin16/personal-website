@@ -19,7 +19,7 @@ export default function Layout({ children, home }) {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossOrigin="anonymous"/>
 
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Lobster+Two&family=Recursive:wght@400;600&family=Ubuntu:wght@400;600&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Lobster+Two&family=Recursive:wght@400;600&family=Ubuntu:wght@400;600&display=swap" rel="stylesheet" />
 
                 <link rel="icon" type="image/png" href="/favicon.png" />
             </Head>
