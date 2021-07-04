@@ -24,6 +24,7 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: bolder;
     flex-grow: 1; /* This element grows to fill up space */
+    margin: 0;
 }
 
 .thumbnail_container {
