@@ -26,7 +26,7 @@
     composes: section_partition;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
     .left_section_partition {
         text-align: left;
     }

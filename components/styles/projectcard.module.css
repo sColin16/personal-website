@@ -1,99 +1,66 @@
-.outer_container {
-    position: relative;    /* Necessary to place project links absolute within this container */
+.container {
     background: #2A2A2A;
-    border-radius: 10px;
+    border-radius: 4px;
     transition: all 200ms;
-    margin: 20px 0;
+    padding: 15px;
 }
 
-.outer_container:hover {
-    transform: scale(1.02);
-    background: #424242;
+.container:hover {
+    /* transform: scale(1.00); */
+    transform: translateY(-5px);
+    background: #383838;
     cursor: pointer;
 }
 
-.inner_container {
+.header {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
 }
 
+.header h2 {
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    flex-grow: 1; /* This element grows to fill up space */
+    margin: 0;
+}
+
 .thumbnail_container {
-    text-align: center;
-    flex-basis: 100%; /* Take up the full width of the card for small screens */
-    max-width: 200px; /* Restrict size of the thumbnails so they aren't absurd */
-    padding: 20px;
+    padding: 0 10px;
+    flex-shrink: 0;  /* This element will not become smaller for long names */
 }
 
-/* thumbnail takes up all available space */
-.thumbnail_container img {
-    width: 100%;
-}
-
-.info_container {
-    padding: 10px;
-}
-
-.info_container h2 {
-    font-size: 28px;
-    margin-top: 0;
-    text-align: center; /* Center name of the project for small screens */
+.container p {
+    font-size: 16px;
+    margin: 12px 0;
 }
 
 .tag_container {
     display: flex;
     flex-basis: 100%;
     flex-wrap: wrap;
-    padding: 10px;
     font-family: 'Open Sans', sans-serif;
+    margin: 0 -5px -5px 0;
 }
 
 .tag_container span {
-    margin: 5px;
+    margin: 0 5px 5px 0;
     padding: 5px;
-    background-color: #424242;
-    border-radius: 5px;
+    background-color: #0bb5ff;
+    border-radius: 4px;
     transition: all 200ms;
+    color: #121212;
+    font-weight: 600;
 }
 
 /* Increase brightness of tag when project card is hovered so thye are still visible */
-.outer_container:hover .tag_container span {
-    background-color: #626262;
-}
-
-.links_container {
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: 10px;
-}
-
-.links_container a {
-    padding: 5px;
-    font-size: 24px;
-}
-
-.links_container a i {
-    transition: all 200ms;
-}
-
-.links_container a:hover i {
-    transform: scale(1.15);
+.container:hover div.tag_container span {
+    background-color: #1ebbff;
 }
 
 @media (min-width: 576px) {
-    /* Stack thumbnail and description */
-    .thumbnail_container {
-        flex-basis: 33%;
-        max-width: 33% !important;
-    }
-
-    .info_container {
-        flex-basis: 67%;
-        max-width: 67%;
-    }
-
     /* Left align project title */
     .info_container h2 {
         text-align: left !important;
