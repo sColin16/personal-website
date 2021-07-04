@@ -1,0 +1,17 @@
+.card_constraints {
+    max-width: 450px;
+    padding: 10px;
+}
+
+.container_constraints {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+@media (min-width: 768px) {
+    .card_constraints {
+        width: 50%;
+    }
+}

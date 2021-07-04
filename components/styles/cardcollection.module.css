@@ -24,6 +24,7 @@
 /* Add an animation for when the card becomes visible */
 .cardWrapper {
     transition: all 200ms;
+    /* display: inline-block; */
 }
 
 /* "hidden" project/post stylings */

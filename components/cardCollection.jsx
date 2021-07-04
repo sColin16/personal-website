@@ -11,7 +11,7 @@ import styles from './styles/cardcollection.module.css'
  * @param {Number} props.displayDelay time in milliseconds between new cards appearing
  * @param {ReactNode} props.children the cards to display within the container
  */
-export default function CardCollection({ initialCards, increment, displayDelay, children }) {
+export default function CardCollection({ initialCards, increment, displayDelay, wrapperClass, containerClass, children }) {
     // Shows more cards based on the incremenet set
     function showMoreCards() {
         showNextCard(increment);
@@ -37,9 +37,9 @@ export default function CardCollection({ initialCards, increment, displayDelay, 
 
     return (
         <>
-            <div>
+            <div className={containerClass}>
                 {children.map((child, i) => (
-                    <div className={classNames(styles.cardWrapper, {[styles.hidden]: i >= numShownCards})} key={i}>
+                    <div className={classNames(styles.cardWrapper, wrapperClass, {[styles.hidden]: i >= numShownCards})} key={i}>
                         {child}
                     </div>
                 ))}
