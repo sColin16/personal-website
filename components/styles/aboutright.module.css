@@ -10,7 +10,7 @@
     margin-right: 10px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
     .headline {
         justify-content: flex-start;
         text-align: left;

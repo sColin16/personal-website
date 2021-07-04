@@ -69,10 +69,3 @@
 .container:hover div.tag_container span {
     background-color: #1fbbff;
 }
-
-@media (min-width: 576px) {
-    /* Left align project title */
-    .info_container h2 {
-        text-align: left !important;
-    }
-}
