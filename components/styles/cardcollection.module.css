@@ -7,7 +7,7 @@
 
 .card_wrapper {
     transition: all 200ms; /* Add an animation for when the card becomes visible */
-    max-width: 500px;
+    width: 500px;
     padding: 10px;
 }
 

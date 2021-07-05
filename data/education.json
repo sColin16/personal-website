@@ -1,0 +1,11 @@
+{
+    "education": [
+        {
+            "degree": "B.S.",
+            "major": "Computer Science",
+            "date": "May 2022",
+            "school": "Colorado School of Mines",
+            "thumbnail": "/mines-logo.jpeg"
+        }
+    ]
+}

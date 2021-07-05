@@ -1,10 +1,11 @@
 import ScrollingTitle from "./scrollingTitle"
-import EducationContainer from "./educationContainer"
+import EducationCard from "./educationCard"
+import CardCollection from "./cardCollection"
 import styles from './styles/aboutright.module.css'
 
 const TITLES = ['Colin Siles', 'a Software Engineer', 'a Data Scientist']
 
-export default function AboutSectionRight() {
+export default function AboutSectionRight({ educationList }) {
     return (
         <>
             <h1 className={styles.headline}>
@@ -29,7 +30,13 @@ export default function AboutSectionRight() {
             semesters. In my free time, I enjoy coding, running, solving
             puzzles (e.g. Sudoku, Rubik's Cubes), cooking, and reading.</p>
 
-            <EducationContainer />
+            <h2 className={styles.education_header}>Education</h2>
+
+            <CardCollection initialCards={educationList.length} displayDelay={100}>
+                {educationList.map(education => (
+                    <EducationCard educationInfo={education} key={education.degree + education.major + education.date}/>
+                ))}
+            </CardCollection>
         </>
     )
 }

@@ -13,7 +13,7 @@
 .container:hover {
     transform: translateY(-5px);
     background: #424242;
-    cursor: pointer;
+    cursor: default;
 }
 
 .header {
@@ -38,33 +38,19 @@
     flex-shrink: 0;  /* This element will not become smaller for long names */
 }
 
-.container p {
-    font-size: 16px;
-    margin: 12px 0 20px 0;
-    align-self: flex-start;
-    flex-grow: 1;
-}
-
-.tag_container {
-    display: flex;
-    flex-wrap: wrap;
+.container h3 {
+    font-size: 18px;
     font-family: 'Open Sans', sans-serif;
-    margin: 0 -8px -8px 0;
+    color:#C0C0C0;
+    margin: 8px 0;
 }
 
-.tag_container span {
-    margin: 0 8px 8px 0;
-    padding: 5px 10px;
-    background-color: #0bb5ff;
-    border-radius: 15px;
-    transition: all 200ms;
-    color: #121212;
-    font-size: 13px;
-    font-weight: 600;
-    font-family: 'Recursive';
+.date_container {
+    margin: 0;
+    font-size: 14px;
+    color: #C0C0C0;
 }
 
-/* Increase brightness of tag when project card is hovered so thye are still visible */
-.container:hover div.tag_container span {
-    background-color: #1fbbff;
+.date_container i {
+    margin-right: 8px;
 }

@@ -10,9 +10,18 @@
     margin-right: 10px;
 }
 
+.education_header {
+    text-align: center;
+    margin: 40px 0 10px 0;
+}
+
 @media (min-width: 768px) {
     .headline {
         justify-content: flex-start;
+        text-align: left;
+    }
+
+    .education_header {
         text-align: left;
     }
 }
