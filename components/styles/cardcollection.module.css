@@ -1,3 +1,26 @@
+.container {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.card_wrapper {
+    transition: all 200ms; /* Add an animation for when the card becomes visible */
+    width: 500px;
+    padding: 10px;
+}
+
+/* "hidden" project/post stylings */
+.hidden_card {
+    transform: scale(0);
+    height: 0;
+    width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
 .show_more_button_container {
     width: 100%;
     text-align: center;
@@ -21,22 +44,16 @@
     cursor: pointer;
 }
 
-/* Add an animation for when the card becomes visible */
-.cardWrapper {
-    transition: all 200ms;
-    /* display: inline-block; */
-}
-
-/* "hidden" project/post stylings */
-.hidden {
-    transform: scale(0);
-    height: 0;
-    width: 0;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden;
-}
-
 .hidden_button {
     display: none;
+}
+
+@media (min-width: 768px) {
+    .card_wrapper {
+        width: 50%;    /* 2-tile the cards when the screen is wide enough */
+    }
+
+    .container {
+        justify-content: flex-start; /* left-justify the cards (if there is an odd number */
+    }
 }
