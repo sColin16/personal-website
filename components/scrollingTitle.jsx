@@ -7,6 +7,8 @@ export default function ScrollingTitle({ titles }) {
 
     const containerRef = useRef(null);  // Reference to the container, from which children can be accessed
 
+    let updateTimeout; // Refernce to the timeout to update the active title, so it can be canceled when unmounted
+
     /**
      * Utility to clear the size constraints of the title container
      * So that when we test the title sizes, they can take up us much space as needed
@@ -82,7 +84,11 @@ export default function ScrollingTitle({ titles }) {
         const animationDuration = parseFloat(computedStyles['animation-duration'].replace('ms', '')) * 1000;
 
         // Schedule making the title visible when the animation ends
-        setTimeout(() => setActiveTitle((activeTitle + 1) % titles.length), animationDuration)
+        updateTimeout = setTimeout(() => setActiveTitle((activeTitle + 1) % titles.length), animationDuration)
+
+        return () => {
+            clearTimeout(updateTimeout);
+        }
     }, [activeTitle])
 
     // Add an event listner to update the title size when the width changes
@@ -91,6 +97,10 @@ export default function ScrollingTitle({ titles }) {
         window.addEventListener('resize', updateContainerSize)
 
         updateContainerSize()
+
+        return () => {
+            window.removeEventListener('resize', updateContainerSize)
+        }
     }, [])
 
     return (
