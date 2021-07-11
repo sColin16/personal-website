@@ -45,7 +45,15 @@ export default function FullHeader() {
     // Note: this isn't a very React way to do this. I think we should be using refs
     useEffect(() => {
         const updateActive = () => {
-            const scrollPositions = getScrollPositions(Object.keys(SECTIONS));
+            let scrollPositions;
+
+            try {
+                scrollPositions = getScrollPositions(Object.keys(SECTIONS));
+            } catch (error) {
+                console.warn('Failed to find sections, likely because they have been unmounted') 
+
+                return
+            }
 
             let newActiveSection = activeSectionId;
 
