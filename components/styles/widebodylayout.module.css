@@ -1,0 +1,36 @@
+.container {
+    max-width: 100%;
+    padding: 0 30px;
+    margin: 0 auto; /* Center the container on the webpage */
+}
+
+/* Adds space above the first section
+ * TODO: put this somewhere else
+ */
+.container section:first-child {
+    padding-top: 125px;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 576px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .container {
+        max-width: 1500px;
+    }
+}

@@ -32,12 +32,12 @@ function getScrollPositions(sections) {
 }
 
 /**
- * The header displayed on all parts of the site 
+ * The header displayed on the home page
  * @param {Object} props React props passed to this component
  * @param {boolean} props.home Whether or not the header is being displayed on the home page
  * @returns {ReactElement}
  */
-export default function Header({ home }) {
+export default function FullHeader() {
     const [navOpen, setNavOpen] = useState(false); // Track if the navbar menu is open on small devices
     const [activeSectionId, setActiveSectionId] = useState(null); // Track which section id is active
 
@@ -58,10 +58,8 @@ export default function Header({ home }) {
             setActiveSectionId(newActiveSection); 
         }
 
-        if (home) {
-            updateActive()
-            window.addEventListener('scroll', updateActive);
-        }
+        updateActive()
+        window.addEventListener('scroll', updateActive);
 
         // Remove the event listener on unmount
         return () => {
@@ -81,15 +79,13 @@ export default function Header({ home }) {
                 </div>
             </div>
 
-            { home &&
-                <nav className={classNames(styles.nav, {[styles.open]: navOpen })}>
-                    {Object.entries(SECTIONS).map(([sectionId, text]) => (
-                        <a href={`/#${sectionId}`}  key={sectionId}>
-                            <h2 className={classNames({[styles.active]: activeSectionId === sectionId})}>{text}</h2>
-                        </a>
-                    ))}
-                </nav>
-            }
+            <nav className={classNames(styles.nav, {[styles.open]: navOpen })}>
+                {Object.entries(SECTIONS).map(([sectionId, text]) => (
+                    <a href={`/#${sectionId}`}  key={sectionId}>
+                        <h2 className={classNames({[styles.active]: activeSectionId === sectionId})}>{text}</h2>
+                    </a>
+                ))}
+            </nav>
         </header>
     )
 }

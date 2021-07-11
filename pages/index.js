@@ -1,5 +1,7 @@
 import Head from 'next/head'
-import Layout from '../components/layout'
+import GlobalLayout from '../components/globalLayout'
+import FullHeader from '../components/fullHeader'
+import WideBodyLayout from '../components/wideBodyLayout'
 import AboutSection from '../components/aboutSection'
 import PortfolioSection from '../components/portfolioSection'
 import PostsSection from '../components/postsSection'
@@ -11,11 +13,17 @@ export default function Home({ education, projects, posts }) {
       <Head>
         <title>Colin Siles</title>
       </Head>
-      <Layout home>
-        <AboutSection education={education}/>
-        <PortfolioSection projects={projects}/>
-        <PostsSection posts={posts}/>
-      </Layout>
+
+      <GlobalLayout>
+        <FullHeader />
+
+        <WideBodyLayout>
+          <AboutSection education={education}/>
+          <PortfolioSection projects={projects}/>
+          <PostsSection posts={posts}/>
+        </WideBodyLayout>
+
+      </GlobalLayout>
     </>
   )
 }
