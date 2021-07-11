@@ -1,3 +1,5 @@
+/* This file defines styles for bot the full (homepage) and partial (non-homepage) headers */
+
 .header {
     position: fixed; /* Keeps the bar ar the top */
     top: 0;
@@ -5,6 +7,26 @@
     background-color: #2A2A2A;
     z-index: 99; /* Keeps the bar above everything else on the page (specifically the scrolling titles) */
 }
+
+.primary_nav_partition {
+    width: 100%;
+    display: inline-block;
+}
+
+.primary_nav_partition h1 {
+    display: inline-block;
+    padding: 0 20px;
+    margin: 10px 0;
+    font-family: 'Lobster Two', cursive;
+    font-size: 40px;
+}
+
+.hamburger_container {
+    display: block;
+    float: right;
+    padding: 10px;
+}
+
 
 .nav {
     margin: 0;
@@ -42,26 +64,17 @@
     color: white;
 }
 
-.primary_nav_partition {
-    width: 100%;
-    display: inline-block;
-}
-
-.primary_nav_partition h1 {
-    display: inline-block;
-    padding: 0 20px;
-    margin: 10px 0;
-    font-family: 'Lobster Two', cursive;
-    font-size: 40px;
-}
-
-.hamburger_container {
-    display: block;
-    float: right;
-    padding: 10px;
-}
-
 @media (min-width: 768px){
+    .primary_nav_partition {
+        width: auto;
+        padding-right: 20px;
+    }
+
+    /* Make the hamburger vanish when the screen is wide enough */
+    .hamburger_container {
+        display: none !important;
+    }
+
     /* Make the full menu appear when the screen is wide enough */
     .nav {
         display: inline-flex !important;
@@ -71,15 +84,5 @@
 
     .nav h2 {
         padding: 21px 20px;
-    }
-
-    /* Make the hamburger vanish when the screen is wide enough */
-    .hamburger_container {
-        display: none !important;
-    }
-
-    .primary_nav_partition {
-        width: auto;
-        padding-right: 20px;
     }
 }

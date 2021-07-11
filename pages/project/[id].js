@@ -1,6 +1,8 @@
 import fs from 'fs'
 import Head from 'next/head'
-import Layout from '../../components/layout'
+import GlobalLayout from '../../components/globalLayout'
+import PartialHeader from '../../components/partialHeader'
+import NarrowBodyLayout from '../../components/narrowBodyLayout'
 import ProjectInfo from '../../components/projectInfo'
 
 export default function Project({ projectInfo }) {
@@ -9,11 +11,17 @@ export default function Project({ projectInfo }) {
             <Head>
                 <title>Colin Siles | {projectInfo.name}</title>
             </Head>
-            <Layout>
-                <ProjectInfo projectInfo={projectInfo} />
-                <h2>Related Posts</h2>
-                <p>Need to make this into a component</p>
-            </Layout>
+
+            <GlobalLayout>
+                <PartialHeader />
+
+                <NarrowBodyLayout>
+                    <ProjectInfo projectInfo={projectInfo} />
+                    <h2>Related Posts</h2>
+                    <p>Need to make this into a component</p>
+                </NarrowBodyLayout>
+
+            </GlobalLayout>
         </>
     )
 }

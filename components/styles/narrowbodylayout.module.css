@@ -1,0 +1,5 @@
+.container {
+    max-width: 800px;       /* Just constrain the container to a max width */
+    padding: 110px 40px;    /* Give the container some padding so the context has room to breath from the edges */
+    margin: 0 auto;         /* Center the content */
+}
