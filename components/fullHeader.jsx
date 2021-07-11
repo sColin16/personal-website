@@ -41,31 +41,31 @@ export default function FullHeader() {
     const [navOpen, setNavOpen] = useState(false); // Track if the navbar menu is open on small devices
     const [activeSectionId, setActiveSectionId] = useState(null); // Track which section id is active
 
+    const updateActive = () => {
+        let scrollPositions;
+
+        try {
+            scrollPositions = getScrollPositions(Object.keys(SECTIONS));
+        } catch (error) {
+            console.warn('Failed to find sections, likely because they have been unmounted') 
+
+            return
+        }
+
+        let newActiveSection = activeSectionId;
+
+        for (const [sectionId, position] of Object.entries(scrollPositions)) {
+            if (position < 100) {
+                newActiveSection = sectionId
+            }
+        }
+
+        setActiveSectionId(newActiveSection); 
+    }
+
     // Mount an event listener to track and update the scroll positions 
     // Note: this isn't a very React way to do this. I think we should be using refs
     useEffect(() => {
-        const updateActive = () => {
-            let scrollPositions;
-
-            try {
-                scrollPositions = getScrollPositions(Object.keys(SECTIONS));
-            } catch (error) {
-                console.warn('Failed to find sections, likely because they have been unmounted') 
-
-                return
-            }
-
-            let newActiveSection = activeSectionId;
-
-            for (const [sectionId, position] of Object.entries(scrollPositions)) {
-                if (position < 100) {
-                    newActiveSection = sectionId
-                }
-            }
-    
-            setActiveSectionId(newActiveSection); 
-        }
-
         updateActive()
         window.addEventListener('scroll', updateActive);
 
