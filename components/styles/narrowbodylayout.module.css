@@ -1,5 +1,12 @@
 .container {
-    max-width: 800px;       /* Just constrain the container to a max width */
-    padding: 110px 40px;    /* Give the container some padding so the context has room to breath from the edges */
+    max-width: 576px;
+    padding: 110px 20px;
     margin: 0 auto;         /* Center the content */
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 110px 30px;
+        max-width: 780px;       /* Just constrain the container to a max width */
+    }
 }
