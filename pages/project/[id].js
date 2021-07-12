@@ -4,6 +4,7 @@ import GlobalLayout from '../../components/globalLayout'
 import PartialHeader from '../../components/partialHeader'
 import NarrowBodyLayout from '../../components/narrowBodyLayout'
 import ProjectHeader from '../../components/projectHeader'
+import LargeTagContainer from '../../components/largeTagContainer'
 
 export default function Project({ projectInfo }) {
     return (
@@ -16,7 +17,8 @@ export default function Project({ projectInfo }) {
                 <PartialHeader />
 
                 <NarrowBodyLayout>
-                    <ProjectHeader projectInfo={projectInfo}/>
+                    <ProjectHeader projectInfo={projectInfo} />
+                    <LargeTagContainer tags={projectInfo.tags} />
                 </NarrowBodyLayout>
 
             </GlobalLayout>
