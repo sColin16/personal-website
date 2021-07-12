@@ -3,7 +3,7 @@ import Head from 'next/head'
 import GlobalLayout from '../../components/globalLayout'
 import PartialHeader from '../../components/partialHeader'
 import NarrowBodyLayout from '../../components/narrowBodyLayout'
-import ProjectInfo from '../../components/projectInfo'
+import ProjectHeader from '../../components/projectHeader'
 
 export default function Project({ projectInfo }) {
     return (
@@ -16,9 +16,7 @@ export default function Project({ projectInfo }) {
                 <PartialHeader />
 
                 <NarrowBodyLayout>
-                    <ProjectInfo projectInfo={projectInfo} />
-                    <h2>Related Posts</h2>
-                    <p>Need to make this into a component</p>
+                    <ProjectHeader projectInfo={projectInfo}/>
                 </NarrowBodyLayout>
 
             </GlobalLayout>
