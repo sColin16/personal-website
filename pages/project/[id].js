@@ -39,7 +39,7 @@ export async function getStaticProps({ params }) {
 
     for (const project of projects) {
         if (project.id == projectId) {
-            const markdownContent = fs.readFileSync(`content/projects/${project.contentFile}`)
+            const markdownContent = fs.readFileSync(`content/projects/${project.id}.md`)
             const htmlPromise = await remark().
                                         use(html).
                                         process(markdownContent)
