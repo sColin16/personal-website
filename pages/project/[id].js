@@ -1,12 +1,17 @@
 import fs from 'fs'
+import remark from 'remark'
+import html from 'remark-html'
 import Head from 'next/head'
 import GlobalLayout from '../../components/globalLayout'
 import PartialHeader from '../../components/partialHeader'
 import NarrowBodyLayout from '../../components/narrowBodyLayout'
 import ProjectHeader from '../../components/projectHeader'
 import LargeTagContainer from '../../components/largeTagContainer'
+import RenderedContent from '../../components/renderedContent'
 
-export default function Project({ projectInfo }) {
+export default function Project({ projectInfo, htmlContent }) {
+    console.log(htmlContent)
+
     return (
         <>
             <Head>
@@ -19,6 +24,7 @@ export default function Project({ projectInfo }) {
                 <NarrowBodyLayout>
                     <ProjectHeader projectInfo={projectInfo} />
                     <LargeTagContainer tags={projectInfo.tags} />
+                    <RenderedContent htmlContent={htmlContent} />
                 </NarrowBodyLayout>
 
             </GlobalLayout>
@@ -33,9 +39,17 @@ export async function getStaticProps({ params }) {
 
     for (const project of projects) {
         if (project.id == projectId) {
+            const markdownContent = fs.readFileSync(`content/projects/${project.contentFile}`)
+            const htmlPromise = await remark().
+                                        use(html).
+                                        process(markdownContent)
+
+            const htmlContent = htmlPromise.toString()
+
             return {
                 props: {
-                    projectInfo: project
+                    projectInfo: project,
+                    htmlContent: htmlContent
                 }
             }
         }
