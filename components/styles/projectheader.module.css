@@ -9,6 +9,7 @@
 .thumbnail_container {
     width: 100%;
     text-align: center;
+    flex-shrink: 0; /* The image will not become smaller for large titles */
 }
 
 .title_container {
@@ -34,7 +35,7 @@
 
 @media (min-width: 768px) {
     .container {
-        flex: nowrap;
+        flex-wrap: nowrap;
         justify-content: flex-start;
     }
 
