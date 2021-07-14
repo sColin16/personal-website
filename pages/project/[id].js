@@ -1,11 +1,17 @@
 import fs from 'fs'
+import remark from 'remark'
+import html from 'remark-html'
 import Head from 'next/head'
 import GlobalLayout from '../../components/globalLayout'
 import PartialHeader from '../../components/partialHeader'
 import NarrowBodyLayout from '../../components/narrowBodyLayout'
-import ProjectInfo from '../../components/projectInfo'
+import ProjectHeader from '../../components/projectHeader'
+import LargeTagContainer from '../../components/largeTagContainer'
+import ProjectLinks from '../../components/projectLinks'
+import RenderedContent from '../../components/renderedContent'
+import RelatedPosts from '../../components/relatedPosts'
 
-export default function Project({ projectInfo }) {
+export default function Project({ projectInfo, htmlContent, posts }) {
     return (
         <>
             <Head>
@@ -16,11 +22,19 @@ export default function Project({ projectInfo }) {
                 <PartialHeader />
 
                 <NarrowBodyLayout>
-                    <ProjectInfo projectInfo={projectInfo} />
-                    <h2>Related Posts</h2>
-                    <p>Need to make this into a component</p>
-                </NarrowBodyLayout>
+                    <ProjectHeader projectInfo={projectInfo} />
+                    <LargeTagContainer tags={projectInfo.tags} />
 
+                    {projectInfo.links.length > 0 && (
+                        <ProjectLinks links={projectInfo.links}/>
+                    )}
+
+                    <RenderedContent htmlContent={htmlContent} />
+
+                    {posts.length > 0 && (
+                        <RelatedPosts posts={posts} />
+                    )}
+                </NarrowBodyLayout>
             </GlobalLayout>
         </>
     )
@@ -33,9 +47,25 @@ export async function getStaticProps({ params }) {
 
     for (const project of projects) {
         if (project.id == projectId) {
+            const markdownContent = fs.readFileSync(`content/projects/${project.id}.md`)
+            const htmlPromise = await remark().
+                                        use(html).
+                                        process(markdownContent)
+            const htmlContent = htmlPromise.toString()
+
+            const postProjectXref = JSON.parse(fs.readFileSync('data/project_post_xref.json')).relations
+            const posts = JSON.parse(fs.readFileSync('data/posts.json')).posts
+
+            const filteredXref = postProjectXref.filter(relation => relation.project === project.id)
+            const filteredPostIds = filteredXref.map(relation => relation.post)
+
+            const filteredPosts = posts.filter(post => filteredPostIds.includes(post.id))
+
             return {
                 props: {
-                    projectInfo: project
+                    projectInfo: project,
+                    htmlContent: htmlContent,
+                    posts: filteredPosts
                 }
             }
         }

@@ -1,0 +1,49 @@
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thumbnail_container {
+    width: 100%;
+    text-align: center;
+    flex-shrink: 0; /* The image will not become smaller for large titles */
+}
+
+.title_container {
+    margin-left: 15px;
+    text-align: center;
+}
+
+.title_container h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 36px;
+    margin: 0;
+}
+
+.date_container {
+    font-size: 20px;
+    color: #C0C0C0;
+    margin: 10px 0 0;
+}
+
+.date_container i {
+    margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+
+    .thumbnail_container {
+        width: auto;
+    }
+
+    .title_container {
+        text-align: left;
+    }
+}

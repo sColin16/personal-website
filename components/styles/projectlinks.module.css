@@ -1,0 +1,41 @@
+.container {
+    margin: 24px 0;
+    text-align: center;
+}
+
+.container h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    margin: 0;
+}
+
+.container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.container li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    margin: 4px 0;
+}
+
+.container div {
+    transition: all 200ms;
+    display: inline-block;
+}
+
+.container div:hover {
+    color: #0bb5ff;
+    transform: scale(1.05);
+}
+
+.container i {
+    margin-right: 8px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        text-align: left;
+    } 
+}

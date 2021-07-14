@@ -17,6 +17,12 @@
             "title": "A Year In Review",
             "date": "6/1/2021",
             "description": "Reviewing my growth through the projects I've made in the past year"
+        },
+        {
+            "id": "another-post",
+            "title": "Another Post",
+            "date": "7/13/21",
+            "description": "Another post just to test"
         }
     ]
 }
