@@ -7,11 +7,10 @@ import PartialHeader from '../../components/partialHeader'
 import NarrowBodyLayout from '../../components/narrowBodyLayout'
 import ProjectHeader from '../../components/projectHeader'
 import LargeTagContainer from '../../components/largeTagContainer'
+import ProjectLinks from '../../components/projectLinks'
 import RenderedContent from '../../components/renderedContent'
 
 export default function Project({ projectInfo, htmlContent }) {
-    console.log(htmlContent)
-
     return (
         <>
             <Head>
@@ -24,6 +23,7 @@ export default function Project({ projectInfo, htmlContent }) {
                 <NarrowBodyLayout>
                     <ProjectHeader projectInfo={projectInfo} />
                     <LargeTagContainer tags={projectInfo.tags} />
+                    <ProjectLinks links={projectInfo.links}/>
                     <RenderedContent htmlContent={htmlContent} />
                 </NarrowBodyLayout>
 

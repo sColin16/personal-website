@@ -5,7 +5,7 @@
             "name": "Visplay",
             "thumbnail": "/visplay-icon.svg",
             "description": "A digital signage solution to improve upon existing software controlling digital displays across Mines' campus",
-            "links": [ {"href": "https://gitlab.com/ColoradoSchoolOfMines/visplay", "icon": "fab fa-gitlab"}, {"href": "https://coloradoschoolofmines.gitlab.io/visplay/", "icon": "fas fa-external-link-alt"} ],
+            "links": [ {"title": "View Code", "href": "https://gitlab.com/ColoradoSchoolOfMines/visplay", "icon": "fab fa-gitlab"}, {"title": "Read the Docs", "href": "https://coloradoschoolofmines.gitlab.io/visplay/", "icon": "fas fa-external-link-alt"} ],
             "tags": ["Distributed Systems", "Python"],
             "startDate": "Sept. 2019",
             "endDate": "Present"
