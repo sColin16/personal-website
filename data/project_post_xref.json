@@ -1,7 +1,10 @@
 {
     "relations": [
-        {"project": "Gearbox", "post": "The Making of Gearbox"},
-        {"project": "Gearbox", "post": "A Year in Review"},
-        {"project": "Visplay", "post": "A Year in Review"}
+        {"project": "gearbox", "post": "making-gearbox"},
+        {"project": "gearbox", "post": "2021-review"},
+        {"project": "visplay", "post": "2021-review"},
+        {"project": "march-madness-predictions", "post": "2021-review"},
+        {"project": "march-madness-predictions", "post": "march-madness-miscalculations"},
+        {"project": "march-madness-predictions", "post": "another-post"}
     ]
 }
