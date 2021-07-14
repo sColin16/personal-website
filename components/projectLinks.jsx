@@ -7,7 +7,7 @@ export default function ProjectLinks({ links }) {
 
             <ul>
                 {links.map(link => (
-                    <li><a href={link.href} target="_blank" rel="noopener noreferrer">
+                    <li key={link.href}><a href={link.href} target="_blank" rel="noopener noreferrer">
                         <div><i className={link.icon}></i> {link.title}</div>
                     </a></li>))
                 }
