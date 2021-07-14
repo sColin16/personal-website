@@ -9,8 +9,9 @@ import ProjectHeader from '../../components/projectHeader'
 import LargeTagContainer from '../../components/largeTagContainer'
 import ProjectLinks from '../../components/projectLinks'
 import RenderedContent from '../../components/renderedContent'
+import RelatedPosts from '../../components/relatedPosts'
 
-export default function Project({ projectInfo, htmlContent }) {
+export default function Project({ projectInfo, htmlContent, posts }) {
     return (
         <>
             <Head>
@@ -29,6 +30,10 @@ export default function Project({ projectInfo, htmlContent }) {
                     )}
 
                     <RenderedContent htmlContent={htmlContent} />
+
+                    {posts.length > 0 && (
+                        <RelatedPosts posts={posts} />
+                    )}
                 </NarrowBodyLayout>
             </GlobalLayout>
         </>
@@ -48,10 +53,19 @@ export async function getStaticProps({ params }) {
                                         process(markdownContent)
             const htmlContent = htmlPromise.toString()
 
+            const postProjectXref = JSON.parse(fs.readFileSync('data/project_post_xref.json')).relations
+            const posts = JSON.parse(fs.readFileSync('data/posts.json')).posts
+
+            const filteredXref = postProjectXref.filter(relation => relation.project === project.id)
+            const filteredPostIds = filteredXref.map(relation => relation.post)
+
+            const filteredPosts = posts.filter(post => filteredPostIds.includes(post.id))
+
             return {
                 props: {
                     projectInfo: project,
-                    htmlContent: htmlContent
+                    htmlContent: htmlContent,
+                    posts: filteredPosts
                 }
             }
         }
