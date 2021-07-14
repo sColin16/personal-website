@@ -23,10 +23,13 @@ export default function Project({ projectInfo, htmlContent }) {
                 <NarrowBodyLayout>
                     <ProjectHeader projectInfo={projectInfo} />
                     <LargeTagContainer tags={projectInfo.tags} />
-                    <ProjectLinks links={projectInfo.links}/>
+
+                    {projectInfo.links.length > 0 && (
+                        <ProjectLinks links={projectInfo.links}/>
+                    )}
+
                     <RenderedContent htmlContent={htmlContent} />
                 </NarrowBodyLayout>
-
             </GlobalLayout>
         </>
     )
@@ -43,7 +46,6 @@ export async function getStaticProps({ params }) {
             const htmlPromise = await remark().
                                         use(html).
                                         process(markdownContent)
-
             const htmlContent = htmlPromise.toString()
 
             return {
