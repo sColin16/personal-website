@@ -5,11 +5,13 @@ export default function ProjectLinks({ links }) {
         <div className={styles.container}>
             <h2>Links</h2>
 
-            {
-                links.map(link => (
-                    <p><i className={link.icon}></i> {link.title}</p>
-                ))
-            }
+            <ul>
+                {links.map(link => (
+                    <li><a href={link.href} target="_blank" rel="noopener noreferrer">
+                        <div><i className={link.icon}></i> {link.title}</div>
+                    </a></li>))
+                }
+            </ul>
 
         </div>
     )
