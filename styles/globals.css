@@ -9,7 +9,6 @@ body {
 }
 
 html {
-    scroll-behavior: smooth; /* Desktop-only smooth scrolling behavoir */
     position: relative;
     min-height: 100%;
 }
