@@ -17,7 +17,10 @@
             "name": "March Madness Predictions",
             "thumbnail": "/march-madness-icon.png",
             "description": "An ML model leveraging historical college basketball stats to predict the outcome of March Madness games",
-            "links": [],
+            "links": [
+                {"title": "View Competition", "href": "https://www.kaggle.com/c/ncaam-march-mania-2021", "icon": "fab fa-kaggle"},
+                {"title": "View Augmented Stats Notebook", "href": "https://www.kaggle.com/colinsiles/march-madness-augmented-stat-generation", "icon": "fab fa-kaggle"}
+            ],
             "tags": ["Machine Learning", "Python"],
             "startDate": "Mar. 2021",
             "endDate": "Mar. 2021"
