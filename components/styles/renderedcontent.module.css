@@ -17,6 +17,11 @@
     text-align: center;
 }
 
+.container a {
+    color: #0bb5ff;
+    text-decoration: underline;
+}
+
 @media (min-width: 768px) {
     .container h1 {
         text-align: left;
