@@ -3,9 +3,9 @@
         {
             "id": "making-gearbox",
             "title": "The Making of Gearbox",
-            "date": "5/26/2021",
+            "date": "8/1/2021",
             "description": "The extensive iterative design process behind the development of Gearbox",
-            "tags": ["API Design", "JavaScript"]
+            "tags": ["API Design", "JavaScript", "Python", "Reinforcement Learning"]
         },
         {
             "id": "march-madness-miscalculations",
