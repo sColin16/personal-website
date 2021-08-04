@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from './styles/educationcard.module.css'
+import styles from './styles/education-card.module.css'
 
 export default function educationCard({ educationInfo }) {
     return (

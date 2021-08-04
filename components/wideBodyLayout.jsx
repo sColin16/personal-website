@@ -1,4 +1,4 @@
-import styles from './styles/widebodylayout.module.css'
+import styles from './styles/wide-body-layout.module.css'
 
 /**
  * Defines width breakpoints for wide-body pages (e.g. home page)

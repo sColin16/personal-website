@@ -1,8 +1,8 @@
-import ScrollingTitle from "./scrollingTitle"
-import EducationCard from "./educationCard"
-import RenderedContent from "./renderedContent"
-import CardCollection from "./cardCollection"
-import styles from './styles/aboutright.module.css'
+import ScrollingTitle from "./ScrollingTitle"
+import EducationCard from "./EducationCard"
+import RenderedContent from "./RenderedContent"
+import CardCollection from "./CardCollection"
+import styles from './styles/about-right.module.css'
 
 const TITLES = ['Colin Siles', 'a Software Engineer', 'a Data Scientist']
 

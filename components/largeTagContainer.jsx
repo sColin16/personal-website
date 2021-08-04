@@ -1,6 +1,6 @@
-import styles from './styles/largetagcontainer.module.css'
+import styles from './styles/large-tag-container.module.css'
 
-export default function LargTagContainer({ tags }) {
+export default function LargeTagContainer({ tags }) {
     return (
         <div className={styles.container}>
             {tags.map(tag => (

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './styles/contactbutton.module.css'
+import styles from './styles/contact-button.module.css'
 import classNames from 'classnames'
 
 export default function ContactButton({ props }) {

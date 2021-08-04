@@ -1,6 +1,6 @@
-import CardCollection from './cardCollection'
-import ProjectCard from './projectCard'
-import styles from './styles/relatedprojects.module.css'
+import CardCollection from './CardCollection'
+import ProjectCard from './ProjectCard'
+import styles from './styles/related-projects.module.css'
 
 export default function RelatedProjects({ projects }) {
     return (

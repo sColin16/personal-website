@@ -1,6 +1,6 @@
-import HomeSectionLayout from "./homeSectionLayout"
-import AboutSectionLeft from "./aboutSectionLeft"
-import AboutSectionRight from "./aboutSectionRight"
+import HomeSectionLayout from "./HomeSectionLayout"
+import AboutSectionLeft from "./AboutSectionLeft"
+import AboutSectionRight from "./AboutSectionRight"
 
 export default function AboutSection({ education, aboutHtml }) {
     return (

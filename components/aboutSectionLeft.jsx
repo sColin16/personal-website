@@ -1,6 +1,6 @@
-import ContactButton from './contactButton'
+import ContactButton from './ContactButton'
 import Image from 'next/image'
-import styles from './styles/aboutleft.module.css'
+import styles from './styles/about-left.module.css'
 import profilePic from '../public/profile_pic.jpg'
 
 const CONTACT_BUTTONS = [

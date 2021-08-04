@@ -1,4 +1,4 @@
-import styles from './styles/narrowbodylayout.module.css'
+import styles from './styles/narrow-body-layout.module.css'
 
 /**
  * Defines a container for narrow displays that have a single maximum width and no breakpoints

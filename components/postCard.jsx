@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './styles/postcard.module.css'
+import styles from './styles/post-card.module.css'
 
 export default function PostCard({ postInfo }) {
     return (

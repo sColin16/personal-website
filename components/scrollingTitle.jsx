@@ -1,6 +1,6 @@
 import { createRef, useState, useRef, useEffect } from 'react';
 import classNames from 'classnames'
-import styles from './styles/scrollingtitle.module.css'
+import styles from './styles/scrolling-title.module.css'
 
 export default function ScrollingTitle({ titles }) {
     const [activeTitle, setActiveTitle] = useState(0);

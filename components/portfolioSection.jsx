@@ -1,6 +1,6 @@
-import HomeSectionLayout from "./homeSectionLayout"
-import CardCollection from "./cardCollection"
-import ProjectCard from "./projectCard"
+import HomeSectionLayout from "./HomeSectionLayout"
+import CardCollection from "./CardCollection"
+import ProjectCard from "./ProjectCard"
 
 export default function PortfolioSection({ projects }) {
     return (

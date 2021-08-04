@@ -1,4 +1,4 @@
-import styles from './styles/projectlinks.module.css'
+import styles from './styles/project-links.module.css'
 
 export default function ProjectLinks({ links }) {
     return (

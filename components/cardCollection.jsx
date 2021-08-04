@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import classNames from 'classnames';
-import styles from './styles/cardcollection.module.css'
+import styles from './styles/card-collection.module.css'
 
 /**
  * A layout component to display a series of cards, supporting a "show more" button

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Footer from './footer'
+import Footer from './Footer'
 
 /**
  * A global layout used across all pages, which is basically just the Head tag and footer

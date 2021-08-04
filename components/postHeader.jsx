@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from './styles/postheader.module.css'
+import styles from './styles/post-header.module.css'
 
 /**
  * Holds the primary information about a project, including project header

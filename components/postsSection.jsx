@@ -1,6 +1,6 @@
-import HomeSectionLayout from "./homeSectionLayout"
-import CardCollection from "./cardCollection"
-import PostCard from "./postCard"
+import HomeSectionLayout from "./HomeSectionLayout"
+import CardCollection from "./CardCollection"
+import PostCard from "./PostCard"
 
 export default function PostsSection({ posts }) {
     return (

@@ -1,4 +1,4 @@
-import styles from './styles/homesectionlayout.module.css'
+import styles from './styles/home-section-layout.module.css'
 
 export default function HomeSectionLayout({ children, id }) {
     // Make sure we only have a left and right child
