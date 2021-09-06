@@ -12,7 +12,7 @@
             "title": "March Madness Miscalculations",
             "date": "4/29/2021",
             "description": "Lessons learned from participating in Kaggle's 2021 Men's March Madness competition",
-            "tags": ["Machine Learning", "Data Leakage", "Sports Analystics", "Kaggle Competitions"]
+            "tags": ["Machine Learning", "Data Leakage", "Sports Analytics", "Kaggle Competitions"]
         },
         {
             "id": "2021-review",

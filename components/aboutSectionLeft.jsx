@@ -11,7 +11,7 @@ const CONTACT_BUTTONS = [
     {href: 'https://gitlab.com/sColin16',               icon: 'fab fa-gitlab',      background: '#fca326'},
 ]
 
-const RESUME = "/Colin-Siles-Spring-2021-Resume.pdf"
+const RESUME = "/Colin-Siles-Fall-2021-Resume.pdf"
 
 export default function AboutSectionLeft() {
     return (
