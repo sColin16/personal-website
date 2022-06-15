@@ -4,7 +4,7 @@ import RenderedContent from "./renderedContent"
 import CardCollection from "./cardCollection"
 import styles from './styles/aboutright.module.css'
 
-const TITLES = ['Colin Siles', 'a Software Engineer', 'a Data Scientist']
+const TITLES = ['Colin Siles', 'a Computer Scientist', 'a Software Engineer', 'a Data Scientist']
 
 export default function AboutSectionRight({ educationList, aboutHtml }) {
     return (

@@ -1,13 +1,14 @@
-I'm a student at Colorado School of Mines pursuing a B.S. in Computer Science,
-with a focus in Data Science. My interests include full-stack web development,
-machine learning, and distributed systems.
+I am a technology consultant for Credera, where I act as a Software Engineer and
+Data Scientist. My technical interests include full-stack web development,
+machine learning, programming language design, and distributed systems.
 
-I fell in love with coding when I was ten and got a Lego robot that I could
-program to do anything I could imagine.  Since then, I've continued expanding my
-repertoire of skills, through personal projects, formal education, and industry
-experience. I love learning new skills and technologies!
+I fell in love with coding when I was only ten years old, building contraptions
+with a Lego robotics kit. I continued learning Computer Science after that,
+eventually studying it at Colorado School of Mines. I love learning new things,
+solving problems, and building products!
 
-Outside of software development, I'm also passionate about being a mentor,
-having been a TA for Computer Science classes for many semesters. In my free
-time, I enjoy coding, running, solving puzzles (e.g. Sudoku, Rubik's Cubes),
-cooking, and reading.
+Outside of the technical realm, I'm passionate about being a mentor to pay
+forward the support I've received from my own mentors. I served as a TA and the
+President of ACM during my time at Mines, helping other students learn CS. In my
+free time, I enjoy coding, running, solving puzzles (e.g.  Sudoku, Rubik's
+Cubes, ICPC), cooking, and reading.

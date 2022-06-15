@@ -8,6 +8,7 @@ import PostsSection from '../components/postsSection'
 import fs from 'fs'
 import remark from 'remark'
 import html from 'remark-html'
+import YAML from 'yaml'
 
 export default function Home({ education, projects, posts, aboutHtml }) {
   return (
@@ -31,9 +32,9 @@ export default function Home({ education, projects, posts, aboutHtml }) {
 }
 
 export async function getStaticProps() {
-  const education = JSON.parse(fs.readFileSync('data/education.json')).education
-  const projects = JSON.parse(fs.readFileSync('data/projects.json', 'utf-8')).projects
-  const posts = JSON.parse(fs.readFileSync('data/posts.json')).posts
+  const education = YAML.parse(fs.readFileSync('data/education.yaml', 'utf-8')).education
+  const projects = YAML.parse(fs.readFileSync('data/projects.yaml', 'utf-8')).projects
+  const posts = YAML.parse(fs.readFileSync('data/posts.yaml', 'utf-8')).posts
 
   const markdownContent = fs.readFileSync(`content/aboutme.md`)
   const htmlPromise = await remark().
