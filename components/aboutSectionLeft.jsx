@@ -1,7 +1,6 @@
 import ContactButton from './contactButton'
 import Image from 'next/image'
 import styles from './styles/aboutleft.module.css'
-import profilePic from '../public/profile_pic.jpg'
 
 const CONTACT_BUTTONS = [
     {href: 'mailto:colin.siles16@gmail.com',            icon: 'fas fa-envelope',    background: '#e74c3c'},
@@ -16,7 +15,8 @@ const RESUME = "/Colin-Siles-Fall-2021-Resume.pdf"
 export default function AboutSectionLeft() {
     return (
         <div className={styles.left_container}>
-            <Image src={profilePic} alt="Picture of me" className={styles.image} width={320} height={320}/>
+            <Image src='/profile_pic.jpg' alt="Picture of me"
+                className={styles.image} width={320} height={320}/>
 
             <div className={styles.contact_container}>
                 {CONTACT_BUTTONS.map(props => (
