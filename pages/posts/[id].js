@@ -9,6 +9,7 @@ import PostHeader from '../../components/postHeader'
 import LargeTagContainer from '../../components/largeTagContainer'
 import RenderedContent from '../../components/renderedContent'
 import RelatedProjects from '../../components/relatedProjects'
+import YAML from 'yaml'
 
 export default function Post({ postInfo, htmlContent, projects }) {
     return (
@@ -38,7 +39,7 @@ export default function Post({ postInfo, htmlContent, projects }) {
 /* TODO: adjust the data storage to allow this to be more performant */
 export async function getStaticProps({ params }) {
     const postId = params.id
-    const posts = JSON.parse(fs.readFileSync('data/posts.json', 'utf-8')).posts
+    const posts = YAML.parse(fs.readFileSync('data/posts.yaml', 'utf-8')).posts
 
     for (const post of posts) {
         if (post.id == postId) {
@@ -48,8 +49,8 @@ export async function getStaticProps({ params }) {
                                         process(markdownContent)
             const htmlContent = htmlPromise.toString()
 
-            const postProjectXref = JSON.parse(fs.readFileSync('data/project_post_xref.json')).relations
-            const projects = JSON.parse(fs.readFileSync('data/projects.json')).projects
+            const postProjectXref = YAML.parse(fs.readFileSync('data/project_post_xref.yaml', 'utf-8')).relations
+            const projects = YAML.parse(fs.readFileSync('data/projects.yaml', 'utf-8')).projects
 
             const filteredXref = postProjectXref.filter(relation => relation.post === post.id)
             const filteredProjectIds = filteredXref.map(relation => relation.project)
@@ -68,7 +69,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const posts = JSON.parse(fs.readFileSync('data/posts.json', 'utf-8')).posts
+    const posts = YAML.parse(fs.readFileSync('data/posts.yaml', 'utf-8')).posts
     const paths = posts.map(post => ({params: {id: post.id}}))
 
     console.log(paths)

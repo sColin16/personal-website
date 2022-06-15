@@ -1,0 +1,34 @@
+---
+posts:
+- id: making-gearbox
+  title: The Making of Gearbox
+  date: 8/1/2021
+  description: The extensive iterative design process behind the development of Gearbox
+  tags:
+  - API Design
+  - JavaScript
+  - Python
+  - Reinforcement Learning
+- id: march-madness-miscalculations
+  title: March Madness Miscalculations
+  date: 4/29/2021
+  description: Lessons learned from participating in Kaggle's 2021 Men's March Madness
+    competition
+  tags:
+  - Machine Learning
+  - Data Leakage
+  - Sports Analytics
+  - Kaggle Competitions
+- id: 2021-review
+  title: A Year In Review
+  date: 6/1/2021
+  description: Reviewing my growth through the projects I've made in the past year
+  tags:
+  - tag
+- id: another-post
+  title: Another Post
+  date: 7/13/21
+  description: Another post just to test
+  tags:
+  - tag
+

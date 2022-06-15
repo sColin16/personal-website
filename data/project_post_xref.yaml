@@ -1,0 +1,13 @@
+---
+relations:
+  # Each project and post pair that is associated should be listed by their id
+- project: gearbox
+  post: making-gearbox
+- project: gearbox
+  post: 2021-review
+- project: visplay
+  post: 2021-review
+- project: march-madness-predictions
+  post: 2021-review
+- project: march-madness-predictions
+  post: march-madness-miscalculations

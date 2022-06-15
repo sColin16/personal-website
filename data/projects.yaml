@@ -1,0 +1,62 @@
+---
+projects:
+- id: gearbox
+  name: Gearbox
+  thumbnail: "/gearbox-icon.png"
+  description: A full-featured JavaScript framework to simulate reinforcement learning
+    environments
+  links:
+  - title: View Code
+    href: https://github.com/sColin16/gearbox-js
+    icon: fab fa-github
+  tags:
+  - Reinforcement Learning
+  - JavaScript
+  startDate: Sept. 2019
+  endDate: Present
+- id: march-madness-predictions
+  name: March Madness Predictions
+  thumbnail: "/march-madness-icon.png"
+  description: An ML model leveraging historical college basketball stats to predict
+    the outcome of March Madness games
+  links:
+  - title: View Competition
+    href: https://www.kaggle.com/c/ncaam-march-mania-2021
+    icon: fab fa-kaggle
+  - title: View Augmented Stats Notebook
+    href: https://www.kaggle.com/colinsiles/march-madness-augmented-stat-generation
+    icon: fab fa-kaggle
+  tags:
+  - Machine Learning
+  - Python
+  startDate: Mar. 2021
+  endDate: Mar. 2021
+- id: visplay
+  name: Visplay
+  thumbnail: "/visplay-icon.svg"
+  description: A digital signage solution to improve upon existing software controlling
+    digital displays across Mines' campus
+  links:
+  - title: View Code
+    href: https://gitlab.com/ColoradoSchoolOfMines/visplay
+    icon: fab fa-gitlab
+  - title: Read the Docs
+    href: https://coloradoschoolofmines.gitlab.io/visplay/
+    icon: fas fa-external-link-alt
+  tags:
+  - Distributed Systems
+  - Python
+  startDate: Sept. 2019
+  endDate: Present
+- id: recipe-recommender
+  name: Recipe Recommender
+  thumbnail: "/recipe-icon.png"
+  description: A recommender system that analyzes recipe ingredients and ratings to
+    suggest new recipes that you'll enjoy
+  links: []
+  tags:
+  - Machine Learning
+  - Python
+  startDate: Feb. 2021
+  endDate: May 2021
+
